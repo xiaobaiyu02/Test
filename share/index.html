@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/clown.css">
+	<link rel="stylesheet" type="text/css" href="css/huadan.css">
+	<link rel="stylesheet" type="text/css" href="css/xiaosheng.css">
+</head>
+<body>
+	<div class="wrapper">
+		<!-- <input type="radio" id="go"> -->
+		
+		<div class="first">
+			<div class="step1">
+				<div class="start">					
+					<div class="nail"></div>
+					These faces are <span class="poisoned">poisoned</span>, only by<span>hitting</span> them can bring them <span>alive</span>!
+					<!-- <label data-shadow="Go" for="go" class="goText">Go</label> -->
+				</div>
+			</div>
+		</div>
+
+		<input class="input-circle input-circle1" type="radio" id="circle1" >
+		<input class="input-circle input-circle2" type="radio" id="circle2" >
+		<input class="input-circle input-circle3" type="radio" id="circle3" >
+		<input class="input-circle input-circle4" type="radio" id="circle4" >
+		<input class="input-circle input-circle5" type="radio" id="circle5" >
+		<input class="input-circle input-circle6" type="radio" id="circle6" >
+
+
+		<label for="circle1"><div class="clown clown1"></div></label>
+		<label for="circle2"><div class="huadan huadan1"></div></label>
+		<label for="circle3"><div class="xiaosheng xiaosheng1"></div></label>
+		<label for="circle4"><div class="clown clown2"></div></label>
+		<label for="circle5"><div class="huadan huadan2"></div></label>
+		<label for="circle6"><div class="xiaosheng xiaosheng2"></div></label>
+
+		<div class="score">Hit the faces</div>
+	</div>
+
+	<template id="clown">
+		<div class="clown_wrapper">
+			<div class="year year_left"></div>
+			<div class="year year_right"></div>
+			<div class="face">
+				<div class="chin">
+					<div class="nose_wrapper">
+						<div class="nose nose_left"></div>
+						<div class="nose nose_right"></div>
+					</div>
+					<div class="mouth"></div>
+				</div>
+				<div class="center"></div>
+				<div class="eye eye_left"><div class="inside"></div></div>
+				<div class="eye eye_right"><div class="inside"></div></div>
+				<div class="eye_around eye_around_left"></div>
+				<div class="eye_around eye_around_right"></div>
+			</div>
+		</div>
+	</template>
+
+	<template id="huadan">
+		<div class="huadan_wrapper">
+			<div class="hear hear1"></div>
+			<div class="hear hear2"></div>
+			<div class="hear hear3"></div>
+			<div class="face">
+				<div class="eyebrow_left"></div>
+				<div class="eyebrow_right"></div>
+				<div class="eye eye_left"></div>
+				<div class="eye eye_right"></div>
+				<div class="month"></div>
+			</div>
+			<div class="flowers">
+				<div class="ceng1 top"></div>
+				<div class="ceng1 left"></div>
+				<div class="ceng1 right"></div>
+				<div class="ceng1 bottom"></div>
+			</div>
+		</div>
+	</template>
+
+	<template id="xiaosheng">
+		<div class="xiaosheng_wrapper">
+			<div class="face">
+				<div class="hat">
+					<div class="hat_top"></div>
+					<div class="hat_left"></div>
+					<div class="hat_right"></div>
+				</div>
+				<div class="eye eye_left"></div>
+				<div class="eye eye_right"></div>
+				<div class="center"></div>
+			</div>
+		</div>
+	</template>
+</body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(".clown").append($("#clown").html());
+	$(".huadan").append($("#huadan").html());
+	$(".xiaosheng").append($("#xiaosheng").html());
+</script>
+</html>
