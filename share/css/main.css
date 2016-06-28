@@ -25,16 +25,78 @@ body .score {
   font: 30px cursive;
   color: red;
   text-align: center;
+  position: relative;
 }
 body .score:after {
   content: counter(faces);
   display: block;
+  position: absolute;
+  top: 100%;
+  left: 48.5%;
+}
+body .score:before {
+  content: "/9";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
 }
 body #go {
   opacity: 0;
 }
 body #go:checked ~ .first {
   display: none;
+}
+body .progress {
+  background-color: #e5e9eb;
+  height: 0.25em;
+  position: relative;
+  width: 20em;
+}
+body .progress .progress-bar {
+  -webkit-animation: width 20s linear;
+          animation: width 20s linear;
+  background: -webkit-gradient(linear, left top, right top, from(#4cd964), color-stop(#5ac8fa), color-stop(#007aff), color-stop(#34aadc), color-stop(#5856d6), to(#ff2d55));
+  background: -webkit-linear-gradient(left, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+  background: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+  background-size: 100% 100%;
+  height: 100%;
+  position: relative;
+}
+body .progress .progress-bar .progress-shadow {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(transparent));
+  background-image: -webkit-linear-gradient(top, #f5f5f5, transparent);
+  background-image: linear-gradient(to bottom, #f5f5f5, transparent);
+  height: 4em;
+  position: absolute;
+  top: 100%;
+  -webkit-transform: skew(45deg);
+      -ms-transform: skew(45deg);
+          transform: skew(45deg);
+  -webkit-transform-origin: 0 0;
+      -ms-transform-origin: 0 0;
+          transform-origin: 0 0;
+  width: 100%;
+}
+body .gameover {
+  position: fixed;
+  z-index: 100000;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-animation: gameover 20s linear forwards;
+          animation: gameover 20s linear forwards;
+  font-size: 60px;
+  text-align: center;
+}
+body .gameover span {
+  color: #ccc;
+  font-weight: bold;
+  text-shadow: 1px 2px 2px #fff;
+  display: inline-block;
+  margin-top: 200px;
 }
 body .first {
   cursor: pointer;
@@ -238,6 +300,30 @@ label[for='circle6'] {
   -webkit-filter: hue-rotate(90deg);
           filter: hue-rotate(90deg);
 }
+label[for='circle7'] {
+  top: 70px;
+  z-index: 98;
+  -webkit-animation-delay: -6s !important;
+          animation-delay: -6s !important;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+label[for='circle8'] {
+  top: 90px;
+  z-index: 100;
+  -webkit-animation-delay: -3s !important;
+          animation-delay: -3s !important;
+  -webkit-filter: hue-rotate(90deg);
+          filter: hue-rotate(90deg);
+}
+label[for='circle9'] {
+  top: 85px;
+  z-index: 99;
+  -webkit-animation-delay: -11s !important;
+          animation-delay: -11s !important;
+  -webkit-filter: hue-rotate(90deg);
+          filter: hue-rotate(90deg);
+}
 @-webkit-keyframes tip-move {
   0% {
     -webkit-transform: rotate(6deg);
@@ -308,6 +394,32 @@ label[for='circle6'] {
     left: 20%;
   }
 }
+@-webkit-keyframes width {
+  0%,
+  100% {
+    -webkit-transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
+            transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
+  }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes width {
+  0%,
+  100% {
+    -webkit-transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
+            transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
+  }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
 @-webkit-keyframes neon1 {
   from {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
@@ -322,6 +434,32 @@ label[for='circle6'] {
   }
   to {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+@-webkit-keyframes gameover {
+  0% {
+    left: -5000px;
+    bottom: 100%;
+  }
+  97% {
+    left: -5000px;
+    bottom: 100%;
+  }
+  100% {
+    left: 0px;
+  }
+}
+@keyframes gameover {
+  0% {
+    left: -5000px;
+    bottom: 100%;
+  }
+  97% {
+    left: -5000px;
+    bottom: 100%;
+  }
+  100% {
+    left: 0px;
   }
 }
 .input-circle1:checked ~ label[for='circle1'] {
@@ -345,6 +483,18 @@ label[for='circle6'] {
           filter: initial;
 }
 .input-circle6:checked ~ label[for='circle6'] {
+  -webkit-filter: initial;
+          filter: initial;
+}
+.input-circle7:checked ~ label[for='circle7'] {
+  -webkit-filter: initial;
+          filter: initial;
+}
+.input-circle8:checked ~ label[for='circle8'] {
+  -webkit-filter: initial;
+          filter: initial;
+}
+.input-circle9:checked ~ label[for='circle9'] {
   -webkit-filter: initial;
           filter: initial;
 }

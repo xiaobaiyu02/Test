@@ -1,6 +1,8 @@
+@total_face: 9;
+
 body{
 	counter-reset: faces;
-	cursor:crosshair;
+	cursor: crosshair;
 	.wrapper label{
 		position: absolute;
 		display: block;
@@ -20,15 +22,68 @@ body{
 		font: 30px cursive;
 		color: red;
 		text-align: center;
+		position: relative;
 		&:after{
 			content: counter(faces);
 			display: block;
+			position: absolute;
+			top: 100%;
+			left: 48.5%;
+		}
+		&:before{
+			content: "/@{total_face}";
+			display: block;
+			position: absolute;
+			top: 100%;
+			left: 50%;
 		}
 	}
 	#go{
 		opacity: 0;
 		&:checked ~ .first{
 			display: none;
+		}
+	}
+	.progress {
+		background-color: #e5e9eb;
+		height: 0.25em;
+		position: relative;
+		width: 20em;
+
+		.progress-bar {
+			animation: width 20s linear;
+			background: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
+			background-size: 100% 100%;
+			height: 100%;
+			position: relative;
+			.progress-shadow {
+				background-image: linear-gradient(to bottom, #f5f5f5, transparent);
+				height: 4em;
+				position: absolute;
+				top: 100%;
+				transform: skew(45deg);
+				transform-origin: 0 0;
+				width: 100%;
+			}
+		}
+	}
+	.gameover{
+	  position: fixed;
+	  z-index: 100000;
+	  left: 0;
+	  top: 0;
+	  bottom: 0;
+	  right: 0;
+	  background-color: rgba(0,0,0,0.8);
+	  animation: gameover 20s linear forwards;
+	  font-size: 60px;
+	  text-align: center;
+	  span{
+			color: #ccc;
+			font-weight: bold;
+			text-shadow: 1px 2px 2px #fff;
+			display: inline-block;
+			margin-top: 200px;
 		}
 	}
 	.first{
@@ -178,6 +233,24 @@ label[for='circle6']{
 	animation-delay: -4s!important;
 	filter: hue-rotate(90deg);
 }
+label[for='circle7']{
+	top:70px;
+	z-index: 98;
+	animation-delay: -6s!important;
+	filter: invert(1);
+}
+label[for='circle8']{
+	top:90px;
+	z-index: 100;
+	animation-delay: -3s!important;
+	filter: hue-rotate(90deg);
+}
+label[for='circle9']{
+	top:85px;
+	z-index: 99;
+	animation-delay: -11s!important;
+	filter: hue-rotate(90deg);
+}
 
 @keyframes tip-move{
 	0%{transform: rotate(6deg);}
@@ -191,8 +264,18 @@ label[for='circle6']{
 	80%{ top:20%; left:20%; }
 	100%{ top:30%; left:20%; }
 }
-
-@keyframes neon1 {
+@keyframes width{
+	0%, 100% {
+		transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
+	}
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
+@keyframes neon1{
   from {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
   }
@@ -200,7 +283,13 @@ label[for='circle6']{
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
   }
 }
-.circleChecked(6);
+@keyframes gameover{
+	0%{left:-5000px;bottom:100%;}
+	97%{left:-5000px;bottom:100%;}
+	100%{ left:0px;}
+}
+
+.circleChecked(@total_face);
 .circleChecked(@n, @i: 1) when (@i =< @n) {
 	.input-circle@{i}:checked ~ label[for='circle@{i}'] {
 		filter: initial;
