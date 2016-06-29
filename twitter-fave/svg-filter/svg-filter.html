@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		section{
+			display: inline-block;
+			width: 40vw;
+		}
+		.filterClass{
+			width: 40vw;
+			height: 10vh;
+			background-color: #8d81ac;
+			filter: url("#dropshadow");
+			-webkit-filter: url("#dropshadow");
+/*			-webkit-filter: grayscale(1);
+			filter: gray;
+			filter: grayscale(1);*/
+		}
+		.turnGray{
+			max-width: 100%;
+			filter: url("#gray");
+			-webkit-filter: url("#gray");
+		}
+		circle {
+		    -webkit-transition: stroke-dasharray .25s;
+		    transition: stroke-dasharray .25s;
+		}
+	</style>
+</head>
+<body>
+	<svg style="display: none;">
+	  <defs>
+		<filter id="dropshadow" x="0" y="0" width="200%" height="200%">
+			<feOffset result="offsetResult" in="SourceAlpha" dx="20" dy="20" />
+			<feGaussianBlur result="blurResult" in="offsetResult" stdDeviation="5" />
+			<feBlend in="SourceGraphic" in2="blurResult" mode="normal" />
+		</filter>
+		<filter id="gray">
+			<feColorMatrix type="matrix" values="0.33 0.33 0.33 0 0 0.33 0.33 0.33 0 0 0.33 0.33 0.33 0 0 0 0 0 1 0" />
+		</filter>
+	  </defs>
+	  <!-- <rect width="500" height="300" fill="#8d81ac" filter="url(#dropshadow)" /> -->
+	</svg>
+	<div class="wrapper">
+		<section>
+			<div class="filterClass"></div>
+		</section>
+		<section>
+			<img src="IMG_0752.jpg" class="turnGray">
+		</section>		
+	</div>
+	<svg width="440" height="440" viewbox="0 0 440 440">
+	    <circle cx="220" cy="220" r="170" stroke-width="50" stroke="#D1D3D7" fill="none"></circle>
+	    <circle cx="220" cy="220" r="170" stroke-width="50" stroke="#00A5E0" fill="none" transform="matrix(0,-1,1,0,0,440)" stroke-dasharray="0 1069"></circle>
+	</svg>
+	<p>拖我：<input id="range" type="range" min="0" max="100" value="0" style="width:300px;"></p>
+	<script>
+		if (window.addEventListener) {
+		    var range = document.querySelector("#range"), circle = document.querySelectorAll("circle")[1];
+		    if (range && circle) {
+		        range.addEventListener("change", function() {
+		            var percent = this.value / 100, perimeter = Math.PI * 2 * 170;
+		            circle.setAttribute('stroke-dasharray', perimeter * percent + " " + perimeter * (1- percent));
+		        });
+		    }
+		}
+	</script>
+</body>
+</html>

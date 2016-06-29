@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<style type="text/css">
+		/*toggle button*/
+		.trigger{
+			position: relative;
+			float: right;
+			overflow: hidden;
+			width: 40px;
+			height: 40px;
+			outline: none;
+			border: none;
+			background: none;
+			padding: 0;
+		}
+		.icon rect, .icon line{
+			fill: none;
+			stroke: #dbdbdb;
+			stroke-width: 2px;
+		}
+		.icon{
+			-webkit-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			-webkit-transition: opacity .3s, -webkit-transform .3s;
+			transition: opacity .3s, transform .3s;
+		}
+		.icon--cross, .trigger_active .icon--grid{
+			opacity: 0;
+			-webkit-transform: scale3d(0.5, 0.5, 1);
+			transform: scale3d(0.5, 0.5, 1);
+		}
+		.trigger_active .icon--cross{
+			opacity: 1;
+			-webkit-transform: scale3d(1, 1, 1);
+			transform: scale3d(1, 1, 1);
+		}
+		/*header*/
+		.intro {
+			position: fixed;
+			z-index: 10;
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+			background: #2a2e39;
+			-webkit-transition: -webkit-transform 0.6s;
+			transition: transform 0.6s;
+			-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+			transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+		}
+
+		.container_open .intro {
+			-webkit-transform: translate3d(0, -100%, 0) translate3d(0, 250px, 0);
+			transform: translate3d(0, -100%, 0) translate3d(0, 250px, 0);
+		}
+		.intro_img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			min-height: 120%;
+			-webkit-transform: translate3d(0, 0, 0;);
+			transform: translate3d(0, 0, 0;);
+			-webkit-transition: -webkit-transform .6s, opacity .6s;
+			transition: transform .6s, opacity .6s;
+			-webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+			transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1)
+		}
+		.container_open .intro_img{
+			opacity: 0;
+			-webkit-transform: translate3d(0, 20%, 0);
+			transform: translate3d(0, 20%, 0);
+		}
+		.intro_content{
+			position: absolute;
+			width: 100%;
+			padding: 0 20px;
+			bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container" class="container">
+		<header class="intro">
+			<img src="img/header01.jpg" alt="" class="intro_img">
+			<div class="intro_content">
+				<h1>Essential Feelings</h1>
+				<button class="trigger">
+					<svg width="100%" height="100%" viewBox="0 0 60 60">
+						<g class="icon icon--grid">
+							<rect x="32.5" y="5.5" width="22" height="22"/>
+							<rect x="4.5" y="5.5" width="22" height="22"/>
+							<rect x="32.5" y="33.5" width="22" height="22"/>
+							<rect x="4.5" y="33.5" width="22" height="22"/>
+						</g>
+						<g class="icon icon--cross">
+							<line x1="4.5" y1="55.5" x2="54.953" y2="5.046"/>
+							<line x1="54.953" y1="55.5" x2="4.5" y2="5.047"/>
+						</g>
+					</svg>
+				</button>
+			</div>
+		</header>
+
+	</div>
+	<script src="js/classie.js"></script>
+	<script type="text/javascript">
+		(function(){
+			var container = document.getElementById("container");
+				trigger = container.querySelector(".trigger");
+			function toggleContent(){
+				if(classie.has(container, 'container_open')){
+					classie.remove(container, 'container_open');
+					classie.remove(trigger, "trigger_active");
+					window.addEventListener("scroll", noscroll);
+				}
+				else{
+					classie.add(container, 'container_open');
+					classie.add(trigger, "trigger_active");
+					window.removeEventListener("scroll", noscroll);
+				}
+			}
+			function noscroll(){
+				window.scrollTo(0,0)
+			}
+			window.addEventListener("scroll", noscroll);
+			trigger.addEventListener("click", toggleContent);
+		})()
+	</script>
+</body>
+</html>

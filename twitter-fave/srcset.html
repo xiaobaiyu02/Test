@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding: 0;
+		}
+		.demo { clear: both; }
+		.demo > .image { margin-bottom: 10px; max-width: 100%; float: left; }
+		.demo > .content { margin: 0 0 10px 140px; min-height: 96px; max-width: 100%; padding: 5px; background-color: #eee; vertical-align: top; box-sizing: border-box; }
+		@media screen and (max-width: 360px) {
+		    .demo > .image { float: none;}
+		    .demo > .content { margin-left: 0; }
+		}
+	</style>
+</head>
+<body>
+	<div class="demo">
+		<img class="image" src="srcset/128px.jpg"
+	     srcset="srcset/128px.jpg 128w, srcset/256px.jpg 256w, srcset/512px.jpg 512w"
+	     sizes="(max-width: 360px) 340px, 128px">
+		<div class="content">当视图宽度不大于360像素的时候，左右布局变成上下布局，同时图片撑满屏幕显示。</div>
+	</div>
+	<div class="demo">
+		<img class="image" src="srcset/128px-1.jpg"
+	     srcset="srcset/128px-1.jpg 128w, srcset/256px-1.jpg 256w, srcset/512px-1.jpg 512w"
+	     sizes="(max-width: 360px) calc(100vw - 40px), 128px">
+		<div class="content">当视图宽度不大于360像素的时候，左右布局变成上下布局，同时图片撑满屏幕显示。</div>
+	</div>
+</body>
+</html>

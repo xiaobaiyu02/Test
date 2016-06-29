@@ -1,0 +1,306 @@
+
+*
+any element
+Universal selector
+2
+
+E
+an element of type E
+Type (tag name) selector
+1
+
+E:not(s1, s2)
+an E element that does not match either compound selector s1 or compound selector s2
+
+Negation pseudo-class
+3/4
+
+E:matches(s1, s2)
+an E element that matches compound selector s1 and/or compound selector s2
+
+Matches-any pseudo-class
+4
+
+E.warning
+an E element belonging to the class warning (the document language specifies how class is determined).
+Class selectors
+1
+
+E#myid
+an E element with ID equal to myid.
+ID selectors
+1
+
+E[foo]
+an E element with a foo attribute
+Attribute selectors
+2
+
+E[foo="bar"]
+an E element whose foo attribute value is exactly equal to bar
+Attribute selectors
+2
+
+E[foo="bar" i]
+an E element whose foo attribute value is exactly equal to any (ASCII-range) case-permutation of bar
+Attribute selectors: Case-sensitivity
+4
+
+E[foo~="bar"]
+an E element whose foo attribute value is a list of whitespace-separated values, one of which is exactly equal to bar
+Attribute selectors
+2
+
+E[foo^="bar"]
+an E element whose foo attribute value begins exactly with the string "bar"
+Attribute selectors
+3
+
+E[foo$="bar"]
+an E element whose foo attribute value ends exactly with the string bar
+Attribute selectors
+3
+
+E[foo*="bar"]
+an E element whose foo attribute value contains the substring bar
+Attribute selectors
+3
+
+E[foo|="en"]
+an E element whose foo attribute value is a hyphen-separated list of values beginning with en
+Attribute selectors
+2
+
+E:dir(ltr)
+an element of type E in with left-to-right directionality (the document language specifies how directionality is determined)
+The :dir() pseudo-class
+4
+
+E:lang(zh, *-hant)
+an element of type E tagged as being either in Chinese (any dialect or writing system) or othewise written with traditional Chinese characters
+The :lang() pseudo-class
+2/4
+
+E:any-link
+an E element being the source anchor of a hyperlink
+The hyperlink pseudo-class
+4
+
+E:link
+an E element being the source anchor of a hyperlink of which the target is not yet visited
+The link history pseudo-classes
+1
+
+E:visited
+an E element being the source anchor of a hyperlink of which the target is already visited
+The link history pseudo-classes
+1
+
+E:local-link
+an E element being the source anchor of a hyperlink of which the target is the current document
+The local link pseudo-class
+4
+
+E:local-link(0)
+an E element being the source anchor of a hyperlink of which the target is within the current domain
+The local link pseudo-class
+4
+
+E:target
+an E element being the target of the referring URL
+The target pseudo-class
+3
+
+E:scope
+an E element being a designated contextual reference element
+The scope pseudo-class
+4
+
+E:current
+an E element that is currently presented in a time-dimensional canvas
+Time-dimensional Pseudo-classes
+4
+
+E:current(s)
+an E element that is the deepest :current element that matches selector s
+Time-dimensional Pseudo-classes
+4
+
+E:past
+an E element that is in the past in a time-dimensional canvas
+Time-dimensional Pseudo-classes
+4
+
+E:future
+an E element that is in the future in a time-dimensional canvas
+Time-dimensional Pseudo-classes
+4
+
+E:active
+an E element that is in an activated state
+The user action pseudo-classes
+1
+
+E:hover
+an E element that is under the cursor, or that has a descendant under the cursor
+The user action pseudo-classes
+2
+
+E:focus
+an E element that has user input focus
+The user action pseudo-classes
+2
+
+E:enabled
+E:disabled
+a user interface element E that is enabled or disabled, respectively
+The :enabled and :disabled pseudo-classes
+3
+
+E:checked
+a user interface element E that is checked/selected (for instance a radio-button or checkbox)
+The selected-option pseudo-class
+3
+
+E:indeterminate
+a user interface element E that is in an indeterminate state (neither checked nor unchecked)
+The indeterminate-value pseudo-class
+4
+
+E:default
+a user interface element E that
+The default option pseudo-class :default
+3-UI/4
+
+E:in-range
+E:out-of-range
+a user interface element E that
+The validity pseudo-classes
+3-UI/4
+
+E:required
+E:optional
+a user interface element E that
+The optionality pseudo-classes
+3-UI/4
+
+E:read-only
+E:read-write
+a user interface element E that
+The mutability pseudo-classes
+3-UI/4
+
+E:root
+an E element, root of the document
+Structural pseudo-classes
+3
+
+E:empty
+an E element that has no children (not even text nodes)
+Structural pseudo-classes
+3
+
+E:first-child
+an E element, first child of its parent
+Structural pseudo-classes
+2
+
+E:nth-child(n)
+an E element, the n-th child of its parent
+Structural pseudo-classes
+3
+
+E:last-child
+an E element, last child of its parent
+Structural pseudo-classes
+3
+
+E:nth-last-child(n)
+an E element, the n-th child of its parent, counting from the last one
+Structural pseudo-classes
+3
+
+E:only-child
+an E element, only child of its parent
+Structural pseudo-classes
+3
+
+E:first-of-type
+an E element, first sibling of its type
+Structural pseudo-classes
+3
+
+E:nth-of-type(n)
+an E element, the n-th sibling of its type
+Structural pseudo-classes
+3
+
+E:last-of-type
+an E element, last sibling of its type
+Structural pseudo-classes
+3
+
+E:nth-last-of-type(n)
+an E element, the n-th sibling of its type, counting from the last one
+Structural pseudo-classes
+3
+
+E:only-of-type
+an E element, only sibling of its type
+Structural pseudo-classes
+3
+
+E:nth-match(n of selector)
+an E element, the n-th sibling matching selector
+Structural pseudo-classes
+4
+
+E:nth-last-match(n of selector)
+an E element, the n-th sibling matching selector, counting from the last one
+Structural pseudo-classes
+4
+
+E:column(selector)
+an E element that represents a cell in a grid/table belonging to a column represented by an element that matches selector
+Grid-Structural pseudo-classes
+4
+
+E:nth-column(n)
+an E element that represents a cell belonging to the nth column in a grid/table
+Grid-Structural pseudo-classes
+4
+
+E:nth-last-column(n)
+an E element that represents a cell belonging to the nth column in a grid/table, counting from the last one
+Grid-Structural pseudo-classes
+4
+
+E F
+an F element descendant of an E element
+Descendant combinator
+1
+
+E > F
+an F element child of an E element
+Child combinator
+2
+
+E + F
+an F element immediately preceded by an E element
+Next-sibling combinator
+2
+
+E ~ F
+an F element preceded by an E element
+Following-sibling combinator
+3
+
+E /foo/ F
+an F element ID-referenced by an E element's foo attribute
+Reference combinator
+4
+
+E! > F
+an E element parent of an F element
+Determining the subject of a selector + Child combinator
+4

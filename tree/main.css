@@ -1,0 +1,63 @@
+/*Plays whith these vars !!! : { */
+/* } */
+body, html {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%; }
+
+body {
+  perspective: 100px; }
+
+div {
+  background: #64c832;
+  /*border-radius:$w;*/
+  width: 100px;
+  height: 10px;
+  position: absolute;
+  margin-left: -10px;
+  -webkit-animation-name: rot;
+  -webkit-animation-duration: 2.02s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  transform-origin: 5px 5px;
+  -webkit-animation-timing-function: ease-in-out; }
+  div.root {
+    bottom: 0;
+    left: 50%;
+    -webkit-animation-name: rot-root;
+    -webkit-animation-duration: 2.5s; }
+  div > div {
+    /*opacity:0.9;*/
+    top: 0;
+    left: 100px;
+    -webkit-animation-duration: calc(inherit / 2);
+    /* don't works :( */ }
+    div > div:nth-child(2) {
+      /*-webkit-animation-duration:15s;*/
+      -webkit-animation-name: rot-inv;
+      -webkit-animation-duration: 1.7s; }
+  div.red {
+    with: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: red; }
+
+@-webkit-keyframes rot {
+  from {
+    transform: rotate(15deg) scale(0.72); }
+  to {
+    transform: rotate(45deg) scale(0.72); } }
+@-webkit-keyframes rot-inv {
+  from {
+    transform: rotate(-45deg) scale(0.72); }
+  to {
+    transform: rotate(-15deg) scale(0.72); } }
+@-webkit-keyframes rot-root {
+  from {
+    transform: rotate(-95deg); }
+  to {
+    transform: rotate(-85deg); } }
+
+/*# sourceMappingURL=main.css.map */

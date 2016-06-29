@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<style type="text/css">
+		body{
+		  font-family:MicroSoft YaHei;
+		  background-color:#1d1d1d;
+		  color:white;
+		  margin:20px;  
+		}
+
+		#banner {
+		  position:relative;
+		  -webkit-backface-visibility:hidden;
+		  width:300px;
+		  height:250px;
+		  background:white;
+		  overflow:hidden;
+		  float:left;
+		}
+
+		.panel {
+		  position:absolute;
+		  width:300px;
+		  height:250px;
+		  overflow:hidden;
+
+		}
+
+		#panel1 {
+		  background: #a02600;
+		 
+		}
+
+		#panel2 {
+		  top:260px;
+		  background: url(img/burger.jpg);
+		}
+
+		#panel1 h1 {
+		  position: relative;
+		  font-size:40px;
+		  line-height:240px;
+		  text-align:center;
+		  width:300px;
+		}
+
+		#panel2 h2{
+		  margin: 0;
+		  position: absolute;
+		  top: 188px;
+		  width: 260px;
+		  font-size: 22px;
+		  text-align: center;
+		  padding: 20px;
+		  background: #a02600;
+		}
+
+		#panel3 {
+		  top:520px;
+		}
+
+		#panel3 #info{
+		  position:absolute;
+		  top:125px;
+		  width:100%;
+		  padding:10px;
+		  height:125px;
+		  background: #a02600;
+		}
+
+		#panel3 h1 {
+		  font-size:22px;
+		  font-weight:700;
+		  letter-spacing: 1px;
+		}
+
+		#panel3 li {
+		  position:relative;
+		  margin-top:10px;
+		  color: #ffa488;
+		}
+
+		#panel3 #orderNow {
+		  position:absolute;
+		  top:60px;
+		  left:180px;
+		  background:#ffc600;
+		  color:#000;
+		  font-size:16px;
+		  font-weight:bold;
+		  padding:10px;
+		  border-radius:10px;
+		  border: 4px solid transparent;
+		}
+
+		#panel3 #orderNow:hover {
+		  background:#ffaa00;
+		  border: 4px solid #fff;
+		  cursor: pointer;
+		}
+
+		/* --- stats --- */
+		#stats {
+		  font-family: MicroSoft YaHei, sans-serif;
+		  font-weight:300;
+		  font-size:18px;
+		  float:left;
+		  color:#ddd;
+		  margin-left:20px;
+		  
+		}
+
+		#stats div {
+		  margin-bottom:10px;
+		  
+		}
+
+		#stats div span {
+		  font-size:22px;
+		  color:white;
+		}
+
+		#restart {
+		  visibility:hidden;
+		}
+	</style>
+	<script type="text/javascript" src="js/greensock/minified/TweenMax.min.js"></script>
+	<script type="text/javascript" src="js/node_modules/jquery/dist/jquery.min.js"></script>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div id="banner">
+	  <div class="panel" id="panel1">
+	    <h1>hungry?</h1>
+	  </div>
+	  <div class="panel" id="panel2">
+	    <h2>How about now?</h2>
+	  </div>
+	  <div class="panel" id="panel3">
+	    <div id="info">
+	      <h1>Burger Boy</h1>
+	      <ul>
+	        <li>Free delivery in NYC</li>
+	        <li>Open 24hrs</li>
+	      </ul>
+	      <div id="orderNow">order now</div>
+	    </div>
+	  </div>
+	  
+	</div>
+
+	<div id="stats">
+	  <div>duration: <span id="duration">0</span> 1 iteration</div>
+	  <div>totalDuration: <span id="totalDuration">0</span> all iterations including repeatDelays</div>
+	  <div>repeat: <span id="repeatCount">0</span> of <span id="totalRepeatCount"></span></div>
+	  <div>time: <span id="time">1</span></div>
+	  <div>totalTime: <span id="totalTime">1</span></div>
+	  <div>progress: <span id="progress">1</span></div>
+	  <div>totalProgress: <span id="totalProgress">1</span></div>
+	  <button id="restart">restart()</button>
+	</div>
+	
+	<script type="text/javascript">
+		var 
+		    $panel1 = $("#panel1"),
+		    $panel2 = $("#panel2"),
+		    $panel3 = $("#panel3"),
+		    $panel1Text = $("#panel1 h1"),
+		    $panel2Text = $("#panel2 h2"),
+		    $info = $("#info"),
+		    $list = $("li"),
+		    $orderNow = $("#orderNow"),    
+		    tl;
+
+		var tl = new TimelineMax({delay:0.5, repeat:3, repeatDelay:2, onUpdate:updateStats, onRepeat:updateReps, onComplete:restart});
+
+		//banner animation code (only 11 lines)
+
+		 tl.from(panel1, 0.5, {autoAlpha:0})
+		   .from($panel1Text, 0.5, {scale:0.5, autoAlpha:0, ease:Back.easeOut})
+		   .set($panel2, {top:0}, "+=2")
+		   .from($panel2, 0.2, {autoAlpha:0, scale:1.5})
+		   .from($panel2Text, 0.2, {top:250}, "+=0.5")
+		   .to($panel2Text, 0.2, {top:250}, "+=2")
+		   .set($panel3, {top:0}, "final")
+		   .from($info, 0.5, {top:250}, "final")
+		   .to($panel2, 0.5, {top:-60}, "final")
+		   .staggerFrom($list, 0.3, {autoAlpha:0, left:50}, 0.1, "+=0.2")
+		   .from($orderNow, 0.5, {scale:0, autoAlpha:0, ease:Back.easeOut});
+
+		var duration = document.getElementById("duration"),
+		    totalDuration = document.getElementById("totalDuration"),
+		    repeatCount = document.getElementById("repeatCount"),
+		    totalRepeatCount = document.getElementById("totalRepeatCount"),
+		    time = document.getElementById("time"),
+		    totalTime = document.getElementById("totalTime"),
+		    progress = document.getElementById("progress"),
+		    totalProgress = document.getElementById("totalProgress"),
+		    restart = document.getElementById("restart"),
+		    reps = 0;
+
+		function updateReps() {
+		  reps++;
+		  repeatCount.innerHTML = reps;
+		}
+
+		function updateStats() {
+		  time.innerHTML = tl.time().toFixed(2);
+		  totalTime.innerHTML = tl.totalTime().toFixed(2);
+		  progress.innerHTML = tl.progress().toFixed(2);
+		  totalProgress.innerHTML = tl.totalProgress().toFixed(2);
+		}
+
+		function reset() {
+		  reps = 0;
+		  duration.innerHTML = tl.duration().toFixed(2);
+		  totalDuration.innerHTML = tl.totalDuration().toFixed(2);
+		  repeatCount.innerHTML = reps;
+		  totalRepeatCount.innerHTML = tl.repeat();
+		}
+
+		function restart() {
+		  TweenLite.to(restart, 0.4, {autoAlpha:1})
+		}
+
+		restart.onclick = function() {
+		  reset();
+		  TweenLite.set(restart, {autoAlpha:0})
+		  tl.restart();
+		}
+
+		reset();
+	</script>
+
+</body>
+</html>

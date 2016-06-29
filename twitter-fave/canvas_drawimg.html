@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<canvas id="myCanvas" style="background: skyblue; border: 4px solid #666;">抱歉，您的浏览器还不支持canvas。</canvas>
+	<input type="file" id="myFile" />
+	<img src="111.jpg" id="flower"><img src="prism-a.svg" id="svg">
+
+	<script type="text/javascript">
+		var myCanvas = document.getElementById('myCanvas');
+		var myFile = document.getElementById('myFile');
+
+		var flower = document.getElementById('flower');var svg = document.getElementById('svg');
+		//var img = new Image();
+		//img.src = event.target.result;
+		flower.onload = function(){
+		    myCanvas.width = flower.width;
+		    myCanvas.height = flower.height;
+		    var context = myCanvas.getContext('2d');
+		   
+
+		    context.drawImage(flower, 0, 0, 400, 300);
+		    context.globalCompositeOperation = 'destination-atop';
+		    context.drawImage(svg, 150, 150, 100, 100);
+
+		}
+
+		myFile.onchange = function(event) {
+		    var selectedFile = event.target.files[0];
+			var reader = new FileReader();
+		    reader.onload = putImage2Canvas;
+		    reader.readAsDataURL(selectedFile);
+		}
+
+		function putImage2Canvas(event) {
+		    var img = new Image();
+		    img.src = event.target.result;
+		    img.onload = function(){
+		        myCanvas.width = img.width;
+		        myCanvas.height = img.height;
+		        var context = myCanvas.getContext('2d');
+		        context.globalCompositeOperation = "xor";
+
+		        context.drawImage(img, 0, 0, img.width, img.height);
+
+
+		        // var imgdata = context.getImageData(0, 0, img.width, img.height);
+		        // // 处理imgdata
+		        // console.log(imgdata);
+		        // for(var i=0, len= imgdata.data.length; i<len; i+=4) {
+		        //     imgdata.data[i] = 255-imgdata.data[i];
+		        //     imgdata.data[i+1] = 255-imgdata.data[i+1];
+		        //     imgdata.data[i+2] = 255-imgdata.data[i+2];
+		        // }
+		        // context.putImageData(imgdata, 0, 0);
+		        // var imgsrc = myCanvas.toDataURL("image/webp");
+		        // var image = document.createElement('img');
+		        // image.src = imgsrc;
+		        // document.body.appendChild(image);
+		    }
+		}
+	</script>
+</body>
+</html>

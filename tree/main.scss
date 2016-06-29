@@ -1,0 +1,117 @@
+/*Plays whith these vars !!! : { */
+$l:100px;
+$w:10px;
+$angle:30deg;
+$spread:30deg;
+$scale:.72;
+/* } */
+
+body,html{
+  padding : 0;
+  margin  : 0;
+  
+  overflow:hidden;
+  
+  height : 100%;
+  width  : 100%;
+}
+body{
+  perspective:100px;
+}
+div{
+  background:rgb(100,200,50);
+  /*border-radius:$w;*/
+  width  : $l;
+  height :  $w;
+  position:absolute;
+  margin-left:-$w;
+  -webkit-animation-name:rot;
+  -webkit-animation-duration:2.02s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-direction: alternate;
+  transform-origin:$w/2 $w/2;
+  -webkit-animation-timing-function: ease-in-out;
+  &.root{
+    bottom:0;
+    left:50%;
+    -webkit-animation-name:rot-root;
+    -webkit-animation-duration:2.5s;
+  }
+  >div{
+    /*opacity:0.9;*/
+    top:0;
+    left:$l;
+    -webkit-animation-duration:calc(inherit / 2); /* don't works :( */
+    &:nth-child(2){
+      /*-webkit-animation-duration:15s;*/
+      -webkit-animation-name:rot-inv;
+      -webkit-animation-duration:1.7s;
+    }
+  }
+ // &:before{
+ //    content:'';
+ //      display:block;
+ //      width :$w/2;
+ //      height:$w/2;
+ //      background:black;
+ //      overflow:hidden;
+ //      position:absolute;
+ //      top:$w/4;
+ //      border-radius:$w;
+ //      left:$w/4;
+ //    }
+  &.red{
+    with: $w;
+    height: $w;
+    border-radius: 100%;
+    background-color: red;
+    // -webkit-animation: color-change 2.5s infinite alternate;
+  }
+}
+@-webkit-keyframes rot{
+  from{
+    transform: rotate($angle -$spread/2) scale($scale);
+  }
+  
+  to{
+    transform: rotate($angle +$spread/2) scale($scale);
+  }
+}
+
+@-webkit-keyframes rot-inv{
+  from{
+    transform: rotate(-$angle -$spread/2) scale($scale);
+  }
+  
+  to{
+    transform:rotate(-$angle +$spread/2) scale($scale);
+  }
+}
+
+@-webkit-keyframes rot-root{
+  from{
+    transform: rotate(-95deg);
+  }
+  
+  to{
+    transform: rotate(-85deg);
+  }
+}
+
+// @-webkit-keyframes color-change{
+//   0%{
+//     background-color: red;
+//   }
+//   25%{
+//     background-color: orange;
+//   }
+//   50%{
+//     background-color: yellow;
+//   }
+//   75%{
+//     background-color: green;
+//   }
+//   100%{
+//     background-color: blue;
+//   }
+// }

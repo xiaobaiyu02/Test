@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		section{
+			margin: auto;
+		}
+		.text{
+			display: inline-block;
+			font: 60px fantasy;
+			text-transform: uppercase;
+		}
+		.example1{
+			background: -webkit-linear-gradient(40deg,red,orange,yellow,green,blue,purple);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			-webkit-animation: background-move 1s; 
+		}
+		
+		.example2{
+			background: url(winterfell.jpg);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			text-shadow: 0px 0px 10px rgba(162, 2, 255, 0.25);/*相当于颜色叠加*/
+		}
+		.facebookTips{
+			position: relative;
+			font: 20px cursive;
+			color: #666;
+		}
+		.tip{
+			position: absolute;
+			font: 20px 'Varela Round',Helvetica,Arial,sans-serif bold;
+			width: 90px;
+			text-transform: capitalize;
+			word-wrap: break-word;
+			text-align: center;
+			background: #008fb5;
+			border: 15px solid rgba(128, 128, 128, 0.55);
+			color: #fff;
+			padding: 10px;
+			border-radius: 6px;
+			background-clip: padding-box;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
+			height: 46px;
+		}
+		.fave{
+			display: inline-block;
+			width: 70px;
+			height: 50px;
+			margin: 0 auto;
+			background: url(twitter_fave.png) no-repeat;
+			background-position: 0 0;
+		}
+		.fave:hover{
+			background-position: -3519px 0;
+			transition: background 1s steps(55);
+		}
+		.blend_mode1{
+			width: 150px;
+			height: 150px;
+			border-radius: 100%;
+			background: rgba(51, 187, 127, 0.7) url("angelina.jpg") no-repeat center;
+			background-size: 100% 100%;
+			transition: all .3s linear;
+			background-blend-mode: luminosity;
+		}
+		.blend_mode1:hover{
+			box-shadow: 0 0 0 6px #33bb7f;
+			background-blend-mode: normal;
+		}
+		.blend_mode2,.blend_mode3{
+			font-family: -webkit-pictograph;
+  			font-size: 150px;
+  			letter-spacing: -28px;
+  			text-align: center;
+		}
+		.blend_mode2 span:nth-child(1) {
+			color: rgba(171,23,149, 0.75);
+		}
+		.blend_mode2 span:nth-child(2) {
+			color: rgba(22,124,251, 0.75);
+		}
+		.blend_mode2 span:nth-child(3) {
+			color: rgba(55,216,110, 0.75);
+		}
+		.blend_mode2 span:nth-child(4) {
+			color: rgba(218,124,95, 0.75);
+		}
+		.blend_mode2 span:nth-child(5) {
+			color: rgba(176,32,173, 0.75);
+		}
+		.blend_mode2 span:nth-child(6) {
+			color: rgba(22,133,251, 0.75);
+		}
+		.blend_mode2 span:nth-child(7) {
+			color: rgba(212,254,121, 0.75);
+		}
+		.blend_mode3 span{
+			mix-blend-mode: multiply;
+			/*http://sarasoueidan.com/demos/css-blender/*/
+		}
+		.blend_mode3 span:nth-child(1) {
+		    color: #AB1795;
+		  }
+		.blend_mode3 span:nth-child(2) {
+		    color: #167CFB;
+		  }
+		.blend_mode3 span:nth-child(3) {
+		    color: #37D86E;
+		  }
+		.blend_mode3 span:nth-child(4) {
+		    color: #DA7C5F;
+		  }
+		.blend_mode3 span:nth-child(5) {
+		    color: #B020AD;
+		  }
+		.blend_mode3 span:nth-child(6) {
+		    color: #1685FB;
+		  }
+		.blend_mode3 span:nth-child(7) {
+		    color: #D4FEA1;
+		  }
+		.blend_mode4{
+			width: 300px;
+			height: 300px;
+			background-color: black;
+			background-image: url(bird.gif),
+			  linear-gradient(45deg, white 50%, transparent 50%),
+			  linear-gradient(-45deg, white 50%, transparent 50%);
+			background-repeat: no-repeat, repeat, repeat;
+			background-position: 
+			  50% 15%,
+			  50% 50%,
+			  50% 50%;
+			background-blend-mode: difference;
+			background-size: auto, 5em 5em, 5em 5em;
+			border-radius: 50%;
+		  }
+		  .mask h1{
+			color: deepPink;
+			text-align: center;
+			text-transform: uppercase;
+			font-family: 'MicroSoft YaHei', sans-serif;
+			font-size: 20vw;
+			font-weight: 900;
+			letter-spacing: -3px;
+			line-height: 1; 
+			/* the property that creates the splatter effect */
+			-webkit-mask-image: url(splatter-mask_1.png);
+			mask-image: url(splatter-mask_1.png);
+			/*-webkit-mask-image: linear-gradient(black, transparent);*/
+		  }
+		  .animated-text-fills-wrapper{
+		  	position: relative;
+		  }
+		  .animated-text-fills{
+		  	position: absolute;
+			right: 0;
+			left: 0;
+			margin: auto;
+			font: bold 10vmax/.8 Open Sans, Impact;
+			text-align: center;
+			text-transform: uppercase;
+		  	background-image: -webkit-linear-gradient(skyblue 50%, pink 50%);
+		  	background-size: 100% 20px;
+		  	-background-repeat: no-repeat;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			-webkit-animation: animated_text_fill 1s linear infinite;
+			animation: animated_text_fill 1s linear infinite;
+		  }
+		  @-webkit-keyframes animated_text_fill{
+		  	100%{
+				background-position: 0 20px;
+		  	}
+		  }
+	</style>
+</head>
+<body>
+	<section class="text example1">rainbow</section>
+	<br>
+	<section class="text example2">winterfell</section>
+	<br>
+	<section class="facebookTips">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<div class="tip">facebookTips</div>
+	</section>
+	<br>
+	<section><div class="fave"></div><div class="fave"></div><div class="fave"></div><div class="fave"></div><div class="fave"></div><div class="fave"></div></section>
+	<section class="blend_mode1"></section>
+	<br>
+	<section class="blend_mode2"><span>h</span><span>u</span><span>n</span><span>g</span><span>r</span><span>y</span><span>?</span></section>
+	<br>
+	<section class="blend_mode3"><span>h</span><span>u</span><span>n</span><span>g</span><span>r</span><span>y</span><span>?</span></section>
+	<br>
+	<section class="blend_mode4"></section>
+	<br>
+	<p><img src="small-photo.jpg" srcset="big-photo.jpg 1024w 2x" /></p>
+	<section class="mask"><h1>Splash!</h1></section>
+	<br>
+	<section class="animated-text-fills-wrapper">
+		<div class="animated-text-fills">Animation</div>
+	</section>
+	<br>
+	<section>
+		<svg viewBox="0 0 600 300"></svg>
+	</section>
+</body>
+</html>

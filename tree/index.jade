@@ -1,0 +1,17 @@
+mixin div(n)
+	if(n>0)
+		div
+			+div(n-1)
+		div
+			+div(n-1)
+	if(n==0)
+		div.red
+		div.red
+doctype html
+html
+	head
+		title
+		link(rel="stylesheet", href="main.css")
+	body
+		div.root
+			+div(8)
