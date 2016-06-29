@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+	.container{
+		background:#fafafa;
+		border:1px solid #eee;
+		padding:10px;
+		font-family:Microsoft YaHei;
+	}
+	.container>*{
+		background:skyblue;
+		padding:4px;
+		border:1px solid #eee;
+	}
+</style>
+<script src="../wc/webcomponents.js"></script>
+</head>
+
+<body>
+	<div class="container" style="display: flex">
+
+		<!-- 伸缩项目：块级子元素 -->
+		<div>块</div>
+
+		<!-- 伸缩项目：浮动元素 ― 用户代理会忽略浮动 -->
+		<div style="float: left;">浮动</div>
+
+		<!-- 伸缩项目：包着行内内容的匿名块盒 -->
+		匿名项目 3
+
+		<!-- 伸缩项目：<span> 变成 'display: block'，所以没有行内块现象。-->
+		<span>span</span>
+
+		<!-- 伸缩项目：<span> 变成 'display: block'，所以没有行内块现象。-->
+		<div>
+			我不是
+			<div id="not-an-item">我不是</div>
+			我不是 我不是
+		</div>
+
+	</div>
+</div>
+</body>
+</html>

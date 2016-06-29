@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../lib/font_style.css">
+<link rel="stylesheet" type="text/css" href="../lib/fonts.css">
+<style>
+	ul{
+		list-style:none;
+		padding:0;
+		margin:0;
+	}
+	html{
+		height:100%;
+		/*background:url(../lib/images/sky_bg3.jpg) center center;*/
+		background-size:cover;
+	}
+	body{
+		font-family:Open Sans;
+		color:#666;
+	}
+	.time{
+		font-size:12px;
+		font-family:Microsoft YaHei;
+	}
+	.battery{
+		width: 18px;
+		height: 5px;
+		background-color:#66e613;
+		border:2px solid #9cc1ca;
+		border-radius:6px;
+		box-shadow:insent 0 0 1px #0c6279;
+		position: relative;
+	}
+	.battery:before{
+		content:"...";
+		position: absolute;
+		left:-18px;
+		top: -11px;
+	}
+	header{
+		display:flex;
+		justify-content:space-between;
+		align-items:baseline;
+		margin-top: 12px;
+	}
+	.setting{
+		text-align:right;
+		font-size:12px;
+		line-height:12px;
+		margin: 10px 0 0;
+	}
+	.icon-cog{
+		font-size:24px;
+		margin-right: 6px;
+	}
+	h3{
+		font-weight: normal;
+		text-align: center;
+		margin-bottom:10px;
+	}
+	.password_group{
+		text-align: center;
+	}
+	.password_group span{
+		display:inline-block;
+		width: 9px;
+		height: 9px;
+		margin:0 12px;
+		border-radius:100%;
+		border: 1px solid #3376a0;
+	}
+	section{
+		max-width:400px;
+		margin: 10px auto 0;
+		display: flex;
+		flex-flow:row wrap;
+		justify-content: center;
+		
+	}
+	section>div{
+		width: 60px;
+		height:60px;
+		margin:5px 10px;
+		border-radius:100%;
+		border: 1px solid #666;
+		font-size:12px;
+		display:flex;
+		flex-flow: column;
+		justify-content: center;
+		align-items: center;
+		font: 38px Adobe Devanagari;
+		line-height:26px;
+	}
+	section>div span{
+		font-family:Open Sans;
+		font-size: 10px;
+		line-height: 10px;
+	}
+	footer{
+		position:fixed;
+		bottom:40px;
+		left:0;
+		right:0;
+		z-index: 99;
+	}
+	footer ul{
+		display:flex;
+	}
+	footer li{
+		flex:50%;
+		text-align:center;
+	}
+	@media screen and (max-width:280px) {
+		section>div{
+			max-width:50px;
+			max-height:50px;
+			font-size:32px;
+		}
+		section>div span{
+			font-size: 8px;
+		}
+	}
+
+</style>
+</head>
+
+<body>
+	<header>
+		<span class="time">下午4:22</span>
+		<div class="battery"></div>
+	</header>
+	<div class="setting"><span class="icon-cog"></span><br>setting</div>
+
+	<article>
+		<nav>
+			<h3>Enter the password</h3>
+			<div class="password_group"><span></span><span></span><span></span><span></span></div>
+		</nav>
+		<section>
+			<div>1</div>
+			<div>2<span>ABC</span></div>
+			<div>3<span>DEF</span></div>
+			<div>4<span>GHI</span></div>
+			<div>5<span>JKL</span></div>
+			<div>6<span>MNO</span></div>
+			<div>7<span>PQRS</span></div>
+			<div>8<span>TUV</span></div>
+			<div>9<span>WSYZ</span></div>
+			<div>0</div>
+		</section>
+	</article>
+
+	<footer>
+		<ul>
+			<li>Emergency</li>
+			<li>Cancel</li>
+		</ul>
+
+	</footer>
+</body>
+</html>

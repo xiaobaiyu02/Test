@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Shadow DOM 分享</title>
+<script src="lib/slides.js"></script>
+<script>
+var render = function(text){
+	document.write(document.createElement("div").appendChild(
+		document.createTextNode(text)
+	).parentNode.innerHTML);
+};
+
+</script>
+<style>
+</style>
+</head>
+
+<body style="display: none">
+	<section class="slides layout-widescreen">
+		<article>
+			<h1>Web Component 分享</h1>
+		</article>
+
+		<article>
+			<h3>什么是Web Component？</h3>
+			<ul class="build">
+				<li>Template Element</li>
+				<li>Shadow DOM</li>
+				<li>Custom Element</li>
+				<li>HTML Import</li>
+			</ul>
+		</article>
+
+		<article class="smaller">
+			<h3>Template Element</h3>
+			<div class="build">
+				<pre><script>render([
+					'<template id="tmpl">\n  <div class="wrapper">\n    <div class="header"></div>\n    <div class="body"></div>\n  </div>\n</template>',
+				].join("\n"));</script></pre>
+				<p>DocumentFragment</p>
+			</div>
+		</article>
+
+		<article class="smaller">
+			<h3>Shadow DOM</h3>
+			<div class="build">
+				<pre>var shadow = document.body.createShadowRoot();</pre>
+				<pre><script>render('shadow.innerHTML = "<h3>shadow dom header</h3><div>shadow dom body</div>";')</script></pre>
+				<iframe src="eg/1.html" frameborder="0" style="height:160px;"></iframe>
+			</div>
+		</article>
+
+		<article class="smaller">
+			<div class="build">
+				<pre><script>render('<template id="tmpl">\
+\n	<div class="wrapper">\
+\n		<div class="header">\
+\n			<content select=".page_header"></content>\
+\n		</div>\
+\n		<div class="body">\
+\n			<content select=".page_body"></content>\
+\n		</div>\
+\n	</div>\
+\n</template>')</script></pre>
+				<pre>var tmpl = document.querySelector("#tmpl");
+shadow.appendChild(document.importNode(tmpl.content, true));
+				</pre>
+				<iframe src="eg/2.html" frameborder="0" style="height:160px;"></iframe>
+			</div>
+		</article>
+
+		<article class="smaller">
+			<h3>Shadow DOM Scoped Style</h3>
+			<div class="build">
+				<pre><script>render("<style>button{ color: red; }</style>")</script></pre>
+				<pre><script>render("<template>\n <style>button{ color: blue; }</style>\n <div>\n  <button>shadow button</button>\n </div>\n</template>")</script></pre>
+				<iframe src="eg/3.html" frameborder="0" style="height:160px;"></iframe>
+			</div>
+		</article>
+
+		<article class="smaller">
+			<h3>Custom Element</h3>
+			<div class="build">
+				<pre><script>render('<vdi-storage data-id="sto_001">\n <h4 class="name">存储 A</h4>\n <a name="creator">Kitsune</a>\n <a name="owner">AJC</a>\n <div class="desc">存储 A 的描述</div>\n</vdi-storage>')</script></pre>
+				<pre>document.registerElement("vdi-storage", {
+  prototype: Object.create(HTMLElement.prototype, {
+    createdCallback: {
+      value: function(){
+        var shadow = this.createShadowRoot();
+        shadow.appendChild(document.importNode(tmpl.content, true));
+      }
+    },
+    attachedCallback: { value: function(){} },
+    dettachedCallback: { value: function(){} },
+    attributeChangedCallback: { value: function(attName, oldValue, newValue){} }
+  })
+});</pre>
+			</div>
+		</article>
+
+		<article class="smaller">
+			<h3>Element Extends</h3>
+			<div class="build">
+				<pre><script>render('<section is="vdi-network">\n <h4 class="name">网络 A</h4>\n <a name="creator">Kitsune</a>\n <a name="owner">AJC</a>\n <div class="desc">网络 A 的描述</div>\n</section>')</script></pre>
+				<pre>document.registerElement("vdi-network", {
+  extends: "section",
+  prototype: Object.create(HTMLElement.prototype, {
+    createdCallback: {
+      value: function(){
+        var shadow = this.createShadowRoot();
+        shadow.appendChild(document.importNode(tmpl.content, true));
+      }
+    },
+    attachedCallback: { value: function(){} },
+    dettachedCallback: { value: function(){} },
+    attributeChangedCallback: { value: function(attName, oldValue, newValue){} }
+  })
+});</pre>
+			</div>
+		</article>
+
+		<article>
+			<h3>HTML Import</h3>
+			<div>
+				<pre><script>render('<link rel="import" href="http://webcomponent_provider_domain/package.html">')</script></pre>
+			</div>
+		</article>
+
+		<article>
+			<h1>Thank You!</h1>
+		</article>
+	</section>
+</body>
+</html>

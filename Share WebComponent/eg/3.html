@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="../wc/webcomponents.js"></script>
+<script>
+window.onload = function(){
+	var tmpl = document.querySelector("#tmpl");
+	var shadow = document.getElementById("shadow_host").createShadowRoot();
+	shadow.appendChild(
+		document.importNode(tmpl.content, true)
+	);
+};
+</script>
+<style>
+button{
+	color:red;
+}
+</style>
+</head>
+
+<body>
+<template id="tmpl">
+	<style>
+		button{
+			color:blue;
+		}
+	</style>
+	<div class="wrapper">
+		<button>shadow button</button>
+	</div>
+</template>
+
+	<button>html content button</button>
+	<div id="shadow_host"></div>
+</body>
+</html>

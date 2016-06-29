@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="../wc/webcomponents.js"></script>
+<script>
+window.onload = function(){
+	var shadow = document.body.createShadowRoot();
+	shadow.innerHTML = "<h3>shadow dom header</h3><div>shadow dom body</div>";
+	document.addEventListener("click", function(){
+		alert(document.body.innerHTML);
+	});
+}
+</script>
+</head>
+
+<body>
+<div>html body content</div>
+</body>
+</html>

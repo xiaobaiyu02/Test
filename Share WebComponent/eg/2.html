@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="../wc/webcomponents.js"></script>
+<script>
+window.onload = function(){
+	var tmpl = document.querySelector("#tmpl");
+	var shadow = document.body.createShadowRoot();
+	shadow.appendChild(
+		document.importNode(tmpl.content, true)
+	);
+};
+</script>
+</head>
+
+<body>
+<template id="tmpl">
+	<div class="wrapper">
+		<div class="header">
+			<content select=".page_header"></content>
+		</div>
+		<hr>
+		<div class="body">
+			<content select=".page_body"></content>
+		</div>
+	</div>
+</template>
+
+<h1 class="page_header">html content title</h1>
+<article class="page_body">html content body</article>
+</body>
+</html>
