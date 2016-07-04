@@ -1,4 +1,5 @@
 @total_face: 9;
+@game_time: 15s;
 
 body{
 	counter-reset: faces;
@@ -51,7 +52,7 @@ body{
 		width: 20em;
 
 		.progress-bar {
-			animation: width 20s linear;
+			animation: width @game_time linear;
 			background: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
 			background-size: 100% 100%;
 			height: 100%;

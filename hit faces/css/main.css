@@ -54,8 +54,8 @@ body .progress {
   width: 20em;
 }
 body .progress .progress-bar {
-  -webkit-animation: width 20s linear;
-          animation: width 20s linear;
+  -webkit-animation: width 15s linear;
+          animation: width 15s linear;
   background: -webkit-gradient(linear, left top, right top, from(#4cd964), color-stop(#5ac8fa), color-stop(#007aff), color-stop(#34aadc), color-stop(#5856d6), to(#ff2d55));
   background: -webkit-linear-gradient(left, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
   background: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55);
