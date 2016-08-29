@@ -1,0 +1,63 @@
+$ceng1-sector-width: 100px;
+$ceng1-sector-color: skyblue;
+$ceng1-sector-num: 6;
+
+@function sectorDeg($n, $flg){
+	@if $flg{
+		@return 90 - (360 / $n);
+	}
+	@else{
+		@return -90 + (360 / $n);
+	}
+}
+
+@mixin render-sector($num){
+	@for $i from 0 through $num{
+		&:nth-child(#{$i+1}){
+			// transform-origin: right bottom;
+			transform: rotate(360/$num*$i+deg) skew(sectorDeg($n: $ceng1-sector-num, $flg: true)+deg);
+		}
+	}
+}
+
+body{
+	padding: 100px;
+}
+
+.ceng1{
+	.sector_container{
+		width: $ceng1-sector-width;
+		height: $ceng1-sector-width;
+		position: relative;
+		// perspective: 1000px;
+		.sector{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transform-origin: right bottom;
+			// transform: skew(sectorDeg($n: $ceng1-sector-num, $flg: true)+deg);
+			// transform-style: preserve-3d;
+			&>div{
+				width: 100%;
+				height: 100%;
+				@include render-sector($ceng1-sector-num);
+				
+				position: absolute;
+				overflow: hidden;
+				// background-color: skyblue;
+				&>div{
+					width: 100%;
+					height: 100%;
+					background-color: $ceng1-sector-color;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					border-radius: 100% 0 0;
+					transform-origin: right bottom;
+					transform: skew(sectorDeg($n: $ceng1-sector-num, $flg: false)+deg);
+				}
+			}
+		}
+
+	}	
+}

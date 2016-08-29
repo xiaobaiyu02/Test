@@ -1,0 +1,133 @@
+.flower .huaxin {
+  width: 30px;
+  height: 30px;
+  position: relative; }
+  .flower .huaxin:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 25%;
+    height: 25%;
+    z-index: 9;
+    background-color: #d0a780;
+    border-radius: 100%;
+    border: 1px solid #bf8854; }
+  .flower .huaxin .huaxin_huaban1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30%;
+    height: 40%;
+    background-color: #cda279;
+    border: 1px solid #bf8854;
+    border-radius: 90% 0;
+    transform-origin: center 110%;
+    transform: rotate(0deg); }
+  .flower .huaxin .huaxin_huaban2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30%;
+    height: 40%;
+    background-color: #cda279;
+    border: 1px solid #bf8854;
+    border-radius: 90% 0;
+    transform-origin: center 110%;
+    transform: rotate(72deg); }
+  .flower .huaxin .huaxin_huaban3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30%;
+    height: 40%;
+    background-color: #cda279;
+    border: 1px solid #bf8854;
+    border-radius: 90% 0;
+    transform-origin: center 110%;
+    transform: rotate(144deg); }
+  .flower .huaxin .huaxin_huaban4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30%;
+    height: 40%;
+    background-color: #cda279;
+    border: 1px solid #bf8854;
+    border-radius: 90% 0;
+    transform-origin: center 110%;
+    transform: rotate(216deg); }
+  .flower .huaxin .huaxin_huaban5 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30%;
+    height: 40%;
+    background-color: #cda279;
+    border: 1px solid #bf8854;
+    border-radius: 90% 0;
+    transform-origin: center 110%;
+    transform: rotate(288deg); }
+  .flower .huaxin .huaxin_huaban6 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30%;
+    height: 40%;
+    background-color: #cda279;
+    border: 1px solid #bf8854;
+    border-radius: 90% 0;
+    transform-origin: center 110%;
+    transform: rotate(360deg); }
+.flower .huaban {
+  width: 80px;
+  height: 25px;
+  background-color: #ffdfcf;
+  border-radius: 100%;
+  position: relative; }
+  .flower .huaban:before {
+    content: "";
+    display: block;
+    width: 25%;
+    height: 40%;
+    background-color: #ffdfcf;
+    border-radius: 100%;
+    position: absolute;
+    top: 18px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 9;
+    box-shadow: 18px -2px 0 0 #ffdfcf, -20px -2px 0 0 #ffdfcf, 24px -18px 0 0 #ffdfcf, -15px -20px 0 0 #ffdfcf, 6px -20px 0 0 #ffdfcf; }
+  .flower .huaban:after {
+    content: "";
+    display: block;
+    width: 105%;
+    height: 145%;
+    background-color: #ffd8c5;
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 100%;
+    z-index: -1;
+    transform: rotate(-5deg); }
+
+/*# sourceMappingURL=main.css.map */

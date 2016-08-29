@@ -1,0 +1,111 @@
+/// flower
+$huaxin-color: #cda279;
+$huaxin-width: 30px;
+$huaxin-center-width: $huaxin-width*0.3;
+$huaxin-huaban: 6;
+
+$huaban-width: 80px;
+$huaban-height: 25px;
+$huaban-color: #ffdfcf;
+
+@mixin absolute-position($position: 'center', $degree: 0){
+	@if $position=='center'{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+	}
+	@else if $position=='top'{
+		position: absolute;
+		top: $degree;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	@else if $position=='bottom'{
+		position: absolute;
+		bottom: $degree;
+		left: 0;
+		right: 0;
+		margin: auto;
+	}
+	@else if $position=='left'{
+		position: absolute;
+		left: $degree;
+		bottom: 0;
+		top: 0;
+		margin: auto;
+	}
+	@else{
+		position: absolute;
+		right: $degree;
+		bottom: 0;
+		top: 0;
+		margin: auto;
+	}
+}
+@mixin render-huaxin($num, $degree: 0){
+	@for $i from 0 through $num{
+		.huaxin_huaban#{$i+1}{
+			@include absolute-position('top');
+			width: 30%;
+			height: 40%;
+			background-color: $huaxin-color;
+			border: 1px solid darken($huaxin-color, 10%);
+			border-radius: 90% 0;
+			transform-origin: center 110%;
+			transform: rotate(360/$num*$i+deg);
+		}
+	}
+}
+
+.flower{
+	.huaxin{
+		width: $huaxin-width;
+		height: $huaxin-width;
+		position: relative;
+		&:before{
+			content: "";
+			display: block;
+			@include absolute-position('center');
+			width: 25%;
+			height: 25%;
+			z-index: 9;
+			background-color: lighten($huaxin-color, 2%);
+			border-radius: 100%;
+			border: 1px solid darken($huaxin-color, 10%);
+		}
+		@include render-huaxin(5);
+
+	}
+	.huaban{
+		width: $huaban-width;
+		height: $huaban-height;
+		background-color: $huaban-color;
+		border-radius: 100%;
+		position: relative;
+		&:before{
+			content: "";
+			display: block;
+			width: 25%;
+			height: 40%;
+			background-color: $huaban-color;
+			border-radius: 100%;
+			@include absolute-position('top', 18px);
+			z-index: 9;
+			box-shadow: 18px -2px 0 0 $huaban-color, -20px -2px 0 0 $huaban-color, 24px -18px 0 0 $huaban-color, -15px -20px 0 0 $huaban-color, 6px -20px 0 0 $huaban-color;
+		}
+		&:after{
+			content: "";
+			display: block;
+			width: 105%;
+			height: 145%;
+			background-color: darken($huaban-color, 2%);
+			@include absolute-position('top', -12px);
+			border-radius: 100%;
+			z-index: -1;
+			transform: rotate(-5deg);
+		}
+	}

@@ -1,0 +1,8 @@
+extends index.jade
+
+block flowers
+	div.flower
+		div.huaxin
+			each val, index in [1, 2, 3, 4, 5]
+				div(class='huaxin_huaban'+(index+1))
+		div.huaban
