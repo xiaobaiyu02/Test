@@ -1,0 +1,61 @@
+body {
+  padding: 100px; }
+
+.ceng1 .sector_container {
+  width: 100px;
+  height: 100px;
+  position: relative; }
+  .ceng1 .sector_container .sector {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-transform-origin: right bottom;
+        -ms-transform-origin: right bottom;
+            transform-origin: right bottom; }
+    .ceng1 .sector_container .sector > div {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      overflow: hidden; }
+      .ceng1 .sector_container .sector > div:nth-child(1) {
+        -webkit-transform: rotate(0deg) skew(30deg);
+            -ms-transform: rotate(0deg) skew(30deg);
+                transform: rotate(0deg) skew(30deg); }
+      .ceng1 .sector_container .sector > div:nth-child(2) {
+        -webkit-transform: rotate(60deg) skew(30deg);
+            -ms-transform: rotate(60deg) skew(30deg);
+                transform: rotate(60deg) skew(30deg); }
+      .ceng1 .sector_container .sector > div:nth-child(3) {
+        -webkit-transform: rotate(120deg) skew(30deg);
+            -ms-transform: rotate(120deg) skew(30deg);
+                transform: rotate(120deg) skew(30deg); }
+      .ceng1 .sector_container .sector > div:nth-child(4) {
+        -webkit-transform: rotate(180deg) skew(30deg);
+            -ms-transform: rotate(180deg) skew(30deg);
+                transform: rotate(180deg) skew(30deg); }
+      .ceng1 .sector_container .sector > div:nth-child(5) {
+        -webkit-transform: rotate(240deg) skew(30deg);
+            -ms-transform: rotate(240deg) skew(30deg);
+                transform: rotate(240deg) skew(30deg); }
+      .ceng1 .sector_container .sector > div:nth-child(6) {
+        -webkit-transform: rotate(300deg) skew(30deg);
+            -ms-transform: rotate(300deg) skew(30deg);
+                transform: rotate(300deg) skew(30deg); }
+      .ceng1 .sector_container .sector > div:nth-child(7) {
+        -webkit-transform: rotate(360deg) skew(30deg);
+            -ms-transform: rotate(360deg) skew(30deg);
+                transform: rotate(360deg) skew(30deg); }
+      .ceng1 .sector_container .sector > div > div {
+        width: 100%;
+        height: 100%;
+        background-color: skyblue;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        border-radius: 100% 0 0;
+        -webkit-transform-origin: right bottom;
+            -ms-transform-origin: right bottom;
+                transform-origin: right bottom;
+        -webkit-transform: skew(-30deg);
+            -ms-transform: skew(-30deg);
+                transform: skew(-30deg); }

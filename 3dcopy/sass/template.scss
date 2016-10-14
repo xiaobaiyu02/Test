@@ -1,0 +1,240 @@
+$road_width: 40vw;
+$road_height: 80px;
+$road_num: 5;
+$every_width: 40vw/5;
+
+$animate_time: 3;
+@mixin renderRoad($num){
+	@for $i from 0 through $num{
+		// $time: 3+3*0.3*$i;
+		&.road#{$i+1}{
+			animation: road#{$i+1} 3s ease 3*$i+s;
+		}
+	}
+}
+@mixin renderRoadKeyframe($num){
+	@for $i from 0 through $num{
+		@keyframes road#{$i+1}
+			{
+			0% {
+				transform: translateY($i*5+px) rotateX(70deg) translateX(0) rotateY(0) translateY(0);
+				opacity: 1;
+			}
+			30% {
+				transform: translateY($i*5+px) rotateX(70deg) translateX($every_width*($i+1)) rotateY(0) translateY(0);
+				opacity: 1;
+			}
+			70% {
+				transform: translateY($i*5+px) rotateX(70deg) translateX($every_width*($i+1)) rotateY(80deg) translateY(0);
+				opacity: 1;
+			}
+			100%{
+				transform: translateY($i*5+px) rotateX(70deg) translateX($every_width*($i+1)) rotateY(80deg) translateY(400px);
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.road_wrapper{
+	perspective: 800px;
+	.container{
+		transform-style: preserve-3d;
+		width: $road_width;
+		height: $road_height;
+		display: flex;
+		
+		.road{
+			width: 20%;
+			height: 100%;
+			background-color: #ddd;
+			border: 1px solid #666;
+			transform-origin: 0 50%;
+			transform: translateY(0) rotateX(70deg) translateX(0) rotateY(0) translateY(0);
+			@include renderRoad($road_num);
+		}
+
+	}
+}
+@include renderRoadKeyframe($road_num);
+
+
+
+
+
+
+
+
+
+
+
+$style1_width: 34px;
+$style1_height: 54px;
+$styel_num: 16;
+
+$style2_width: 28px;
+$style2_height: 28px;
+$stye2_num: 16;
+
+$style3_width: 24px;
+$style3_height: 54px;
+$stye3_num: 24;
+
+$style4_width: 44px;
+$style4_height: 38px;
+$stye4_num: 24;
+
+$style5_width: 38px;
+$style5_height: 54px;
+$stye5_num: 32;
+
+$style6_width: 42px;
+$style6_height: 28px;
+$stye6_num: 32;
+
+@mixin render($num, $bgc, $translateZ, $rotateX:0, $clippath: none){
+	@for $i from 0 through $num{
+		& .face#{$i+1}{
+			background-color: $bgc;
+			transform: rotateY(360/$num*$i+deg) translateZ($translateZ) rotateX($rotateX);
+			-webkit-clip-path: $clippath;
+		}
+	}
+}
+
+
+body{
+	padding: 100px;
+}
+.wrapper{
+	display: flex;
+	justify-content: space-between;
+	.container{
+		display: inline-block;
+		perspective: 800px;
+	}	
+}
+
+
+.tower{
+	transform-style: preserve-3d;
+	transform: rotate3d(.6, .6 , .2, 0deg);
+	.ceng{
+		transform-style: preserve-3d;
+		position: relative;
+		&>div{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transform-origin: center bottom;
+		}
+	}
+}
+.ceng1{
+	width: $style1_width;
+	height: $style1_height;
+	transform: rotate3d(0, 1, 0, -40deg);
+	@include render($styel_num, rgba(20, 90, 150, .6), 50px, 50deg, polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0));
+}
+.ceng2{
+	width: $style2_width;
+	height: $style2_height;
+	transform: rotate3d(0, 1, 0, 40deg);
+	@include render($stye2_num, rgba(50, 150, 50, .6), 32px);
+	margin: -13px 0 0 3px;
+}
+.ceng3{
+	width: $style3_width;
+	height: $style3_height;
+	transform: rotate3d(0, 1, 0, 40deg);
+	@include render($stye3_num, rgba(20, 90, 150, .6), 74px, 50deg, polygon(0 100%, 33.33% 0, 66.66% 0, 100% 100%));
+	margin: -20px 0 0 6px;
+}
+.ceng4{
+	width: $style4_width;
+	height: $style4_height;
+	transform: rotate3d(0, 1, 0, 40deg);
+	@include render($stye4_num, rgba(50, 150, 50, .6), 50px);
+	margin: -16px 0 0 -4px;
+}
+.ceng5{
+	width: $style5_width;
+	height: $style5_height;
+	transform: rotate3d(0, 1, 0, 40deg);
+	@include render($stye5_num, rgba(20, 90, 150, .6), 94px, 50deg, polygon(33.33% 0, 66.66% 0, 75% 100%, 25% 100%));
+	margin: -20px 0 0 0;
+}
+.ceng6{
+	width: $style6_width;
+	height: $style6_height;
+	transform: rotate3d(0, 1, 0, 40deg);
+	@include render($stye6_num, rgba(50, 150, 50, .6), 72px);
+	margin: -16px 0 0 -4px;
+	&>div{
+		border-bottom: 27px solid rgba(235,65,30,.6);
+	}
+}
+
+
+$flower_outer_width: 120px;
+$flower_outer_height: 180px;
+$flower_outer_num: 16;
+
+$flower_flw1_width: 50px;
+$flower_flw1_height: 50px;
+$flower_flw1_num: 10;
+
+$flower_flw2_width: 40px;
+$flower_flw2_height: 40px;
+$flower_flw2_num: 8;
+$flower_flw3_num: 6;
+
+.flower{
+	transform-style: preserve-3d;
+	transform: rotate3d(.6, .6 , .2, 0deg);
+	.outer{
+		width: $flower_outer_width;
+		height: $flower_outer_height;
+		transform-style: preserve-3d;
+		position: relative;
+		@include render($flower_outer_num, rgba(160, 35, 225, .4), 40px, 50deg, polygon(33.33% 0, 66.66% 0, 75% 100%, 25% 100%));
+		
+		&>div{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			transform-origin: center bottom;
+		}
+	}
+	.flw_wrap{
+		position: relative;
+		margin-top: 100px;
+		transform-style: preserve-3d;
+		transform: rotate3d(.6, .6 , .2, 136deg);
+		.flw{
+			transform-style: preserve-3d;
+			&>div{
+				width: 100%;
+				height: 100%;
+				border-radius: 100%;
+				position: absolute;
+				transform-origin: center bottom;
+				
+			}
+		}
+	}
+}
+.flw1{
+	width: $flower_flw1_width;
+	height: $flower_flw1_height;
+	@include render($flower_flw1_num, rgba(180, 25, 25, .4), -15px, -45deg, polygon(0 0, 50% 50%, 90% 0, 0 0));
+}
+.flw2{
+	width: $flower_flw2_width;
+	height: $flower_flw2_height;
+	position: absolute;
+	left: 3px;
+	top: 4px;
+	z-index: 9;
+	@include render($flower_flw2_num, rgba(255, 155, 90, .4), -15px, -45deg, polygon(0 0, 50% 50%, 90% 0, 0 0));
+}

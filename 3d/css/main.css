@@ -1,846 +1,1444 @@
+/* line 10, ../sass/main.scss */
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
+/* line 14, ../sass/main.scss */
 body {
   width: 100vw;
   height: 100vh;
-  background: -webkit-radial-gradient(#351454, #2c1146 20%, #1f0c32) no-repeat 100% 100%;
-  background: radial-gradient(#351454, #2c1146 20%, #1f0c32) no-repeat 100% 100%; }
+  background: radial-gradient(#351454, #2c1146 20%, #1f0c32) no-repeat 100% 100%;
+  display: flex;
+  justify-content: space-around;
+}
 
-.wrapper {
-  height: 100%;
-  -webkit-perspective: 800px;
-          perspective: 800px;
-  position: relative; }
-  .wrapper .flw_wrap {
-    display: inline-block;
-    position: absolute;
-    bottom: 0%;
-    right: 6%;
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    -webkit-transform-origin: 100% 0%;
-        -ms-transform-origin: 100% 0%;
-            transform-origin: 100% 0%;
-    -webkit-transform: rotate3d(0.2, 0.4, 0.2, 20deg) translateY(10px) scale(1);
-            transform: rotate3d(0.2, 0.4, 0.2, 20deg) translateY(10px) scale(1); }
-    .wrapper .flw_wrap .flw {
-      -webkit-transform-style: preserve-3d;
-              transform-style: preserve-3d; }
-      .wrapper .flw_wrap .flw > div {
-        width: 100%;
-        height: 100%;
-        border-radius: 100%;
-        position: absolute;
-        -webkit-transform-origin: center bottom;
-            -ms-transform-origin: center bottom;
-                transform-origin: center bottom;
-        -webkit-box-shadow: 0 0 8px 0 rgba(255, 255, 0, 0.2);
-                box-shadow: 0 0 8px 0 rgba(255, 255, 0, 0.2); }
-  .wrapper .box_wrap {
-    display: inline-block;
-    position: absolute;
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d; }
-    .wrapper .box_wrap .box {
-      -webkit-transform-style: preserve-3d;
-              transform-style: preserve-3d;
-      width: 5vw;
-      height: 5vw; }
-      .wrapper .box_wrap .box > div {
-        width: 100%;
-        height: 100%;
-        -webkit-box-shadow: 0 0 8px 0 rgba(255, 255, 0, 0.2);
-                box-shadow: 0 0 8px 0 rgba(255, 255, 0, 0.2);
-        position: absolute; }
-      .wrapper .box_wrap .box .face1 {
-        background-color: rgba(20, 185, 170, 0.4);
-        -webkit-transform: rotateY(0deg) translateZ(2.5vw) rotateX(0);
-                transform: rotateY(0deg) translateZ(2.5vw) rotateX(0);
-        -webkit-clip-path: none; }
-      .wrapper .box_wrap .box .face2 {
-        background-color: rgba(20, 185, 170, 0.4);
-        -webkit-transform: rotateY(90deg) translateZ(2.5vw) rotateX(0);
-                transform: rotateY(90deg) translateZ(2.5vw) rotateX(0);
-        -webkit-clip-path: none; }
-      .wrapper .box_wrap .box .face3 {
-        background-color: rgba(20, 185, 170, 0.4);
-        -webkit-transform: rotateY(180deg) translateZ(2.5vw) rotateX(0);
-                transform: rotateY(180deg) translateZ(2.5vw) rotateX(0);
-        -webkit-clip-path: none; }
-      .wrapper .box_wrap .box .face4 {
-        background-color: rgba(20, 185, 170, 0.4);
-        -webkit-transform: rotateY(270deg) translateZ(2.5vw) rotateX(0);
-                transform: rotateY(270deg) translateZ(2.5vw) rotateX(0);
-        -webkit-clip-path: none; }
-      .wrapper .box_wrap .box .face5 {
-        background-color: rgba(20, 185, 170, 0.4);
-        -webkit-transform: rotateY(360deg) translateZ(2.5vw) rotateX(0);
-                transform: rotateY(360deg) translateZ(2.5vw) rotateX(0);
-        -webkit-clip-path: none; }
-      .wrapper .box_wrap .box .top {
-        -webkit-transform-origin: 50% 0%;
-            -ms-transform-origin: 50% 0%;
-                transform-origin: 50% 0%;
-        background-color: rgba(20, 185, 170, 0.4);
-        -webkit-transform: translateZ(-2.5vw) rotateX(90deg);
-                transform: translateZ(-2.5vw) rotateX(90deg); }
-      .wrapper .box_wrap .box .bottom {
-        background-color: rgba(20, 185, 170, 0.4);
-        -webkit-transform: rotateX(90deg) translateZ(-2.5vw);
-                transform: rotateX(90deg) translateZ(-2.5vw); }
-  .wrapper .umbrella_wrap {
-    display: inline-block;
-    position: absolute;
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    left: 10%;
-    top: 20%;
-    -webkit-transform: rotate3d(0.6, 1, 0.2, 30deg);
-            transform: rotate3d(0.6, 1, 0.2, 30deg);
-    position: relative; }
-    .wrapper .umbrella_wrap .umbrella {
-      -webkit-transform-style: preserve-3d;
-              transform-style: preserve-3d;
-      width: 34px;
-      height: 54px; }
-      .wrapper .umbrella_wrap .umbrella > div {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        -webkit-transform-origin: center top;
-            -ms-transform-origin: center top;
-                transform-origin: center top; }
-      .wrapper .umbrella_wrap .umbrella .face1 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(0deg) translateZ(5px) rotateX(0);
-                transform: rotateY(0deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella1 ease 6s forwards;
-                animation: umbrella1 ease 6s forwards; }
-
-@-webkit-keyframes umbrella1 {
-  0% {
-    -webkit-transform: rotateY(0deg) translateZ(5px) rotateX(0);
-            transform: rotateY(0deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(0deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(0deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella1 {
-  0% {
-    -webkit-transform: rotateY(0deg) translateZ(5px) rotateX(0);
-            transform: rotateY(0deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(0deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(0deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face2 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(22.5deg) translateZ(5px) rotateX(0);
-                transform: rotateY(22.5deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella2 ease 6s forwards;
-                animation: umbrella2 ease 6s forwards; }
-
-@-webkit-keyframes umbrella2 {
-  0% {
-    -webkit-transform: rotateY(22.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(22.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(22.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(22.5deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella2 {
-  0% {
-    -webkit-transform: rotateY(22.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(22.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(22.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(22.5deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face3 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(45deg) translateZ(5px) rotateX(0);
-                transform: rotateY(45deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella3 ease 6s forwards;
-                animation: umbrella3 ease 6s forwards; }
-
-@-webkit-keyframes umbrella3 {
-  0% {
-    -webkit-transform: rotateY(45deg) translateZ(5px) rotateX(0);
-            transform: rotateY(45deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(45deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(45deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella3 {
-  0% {
-    -webkit-transform: rotateY(45deg) translateZ(5px) rotateX(0);
-            transform: rotateY(45deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(45deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(45deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face4 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(67.5deg) translateZ(5px) rotateX(0);
-                transform: rotateY(67.5deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella4 ease 6s forwards;
-                animation: umbrella4 ease 6s forwards; }
-
-@-webkit-keyframes umbrella4 {
-  0% {
-    -webkit-transform: rotateY(67.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(67.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(67.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(67.5deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella4 {
-  0% {
-    -webkit-transform: rotateY(67.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(67.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(67.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(67.5deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face5 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(90deg) translateZ(5px) rotateX(0);
-                transform: rotateY(90deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella5 ease 6s forwards;
-                animation: umbrella5 ease 6s forwards; }
-
-@-webkit-keyframes umbrella5 {
-  0% {
-    -webkit-transform: rotateY(90deg) translateZ(5px) rotateX(0);
-            transform: rotateY(90deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(90deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(90deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella5 {
-  0% {
-    -webkit-transform: rotateY(90deg) translateZ(5px) rotateX(0);
-            transform: rotateY(90deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(90deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(90deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face6 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(112.5deg) translateZ(5px) rotateX(0);
-                transform: rotateY(112.5deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella6 ease 6s forwards;
-                animation: umbrella6 ease 6s forwards; }
-
-@-webkit-keyframes umbrella6 {
-  0% {
-    -webkit-transform: rotateY(112.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(112.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(112.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(112.5deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella6 {
-  0% {
-    -webkit-transform: rotateY(112.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(112.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(112.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(112.5deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face7 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(135deg) translateZ(5px) rotateX(0);
-                transform: rotateY(135deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella7 ease 6s forwards;
-                animation: umbrella7 ease 6s forwards; }
-
-@-webkit-keyframes umbrella7 {
-  0% {
-    -webkit-transform: rotateY(135deg) translateZ(5px) rotateX(0);
-            transform: rotateY(135deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(135deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(135deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella7 {
-  0% {
-    -webkit-transform: rotateY(135deg) translateZ(5px) rotateX(0);
-            transform: rotateY(135deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(135deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(135deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face8 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(157.5deg) translateZ(5px) rotateX(0);
-                transform: rotateY(157.5deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella8 ease 6s forwards;
-                animation: umbrella8 ease 6s forwards; }
-
-@-webkit-keyframes umbrella8 {
-  0% {
-    -webkit-transform: rotateY(157.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(157.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(157.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(157.5deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella8 {
-  0% {
-    -webkit-transform: rotateY(157.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(157.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(157.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(157.5deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face9 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(180deg) translateZ(5px) rotateX(0);
-                transform: rotateY(180deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella9 ease 6s forwards;
-                animation: umbrella9 ease 6s forwards; }
-
-@-webkit-keyframes umbrella9 {
-  0% {
-    -webkit-transform: rotateY(180deg) translateZ(5px) rotateX(0);
-            transform: rotateY(180deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(180deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(180deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella9 {
-  0% {
-    -webkit-transform: rotateY(180deg) translateZ(5px) rotateX(0);
-            transform: rotateY(180deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(180deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(180deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face10 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(202.5deg) translateZ(5px) rotateX(0);
-                transform: rotateY(202.5deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella10 ease 6s forwards;
-                animation: umbrella10 ease 6s forwards; }
-
-@-webkit-keyframes umbrella10 {
-  0% {
-    -webkit-transform: rotateY(202.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(202.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(202.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(202.5deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella10 {
-  0% {
-    -webkit-transform: rotateY(202.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(202.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(202.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(202.5deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face11 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(225deg) translateZ(5px) rotateX(0);
-                transform: rotateY(225deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella11 ease 6s forwards;
-                animation: umbrella11 ease 6s forwards; }
-
-@-webkit-keyframes umbrella11 {
-  0% {
-    -webkit-transform: rotateY(225deg) translateZ(5px) rotateX(0);
-            transform: rotateY(225deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(225deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(225deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella11 {
-  0% {
-    -webkit-transform: rotateY(225deg) translateZ(5px) rotateX(0);
-            transform: rotateY(225deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(225deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(225deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face12 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(247.5deg) translateZ(5px) rotateX(0);
-                transform: rotateY(247.5deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella12 ease 6s forwards;
-                animation: umbrella12 ease 6s forwards; }
-
-@-webkit-keyframes umbrella12 {
-  0% {
-    -webkit-transform: rotateY(247.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(247.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(247.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(247.5deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella12 {
-  0% {
-    -webkit-transform: rotateY(247.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(247.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(247.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(247.5deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face13 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(270deg) translateZ(5px) rotateX(0);
-                transform: rotateY(270deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella13 ease 6s forwards;
-                animation: umbrella13 ease 6s forwards; }
-
-@-webkit-keyframes umbrella13 {
-  0% {
-    -webkit-transform: rotateY(270deg) translateZ(5px) rotateX(0);
-            transform: rotateY(270deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(270deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(270deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella13 {
-  0% {
-    -webkit-transform: rotateY(270deg) translateZ(5px) rotateX(0);
-            transform: rotateY(270deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(270deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(270deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face14 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(292.5deg) translateZ(5px) rotateX(0);
-                transform: rotateY(292.5deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella14 ease 6s forwards;
-                animation: umbrella14 ease 6s forwards; }
-
-@-webkit-keyframes umbrella14 {
-  0% {
-    -webkit-transform: rotateY(292.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(292.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(292.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(292.5deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella14 {
-  0% {
-    -webkit-transform: rotateY(292.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(292.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(292.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(292.5deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face15 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(315deg) translateZ(5px) rotateX(0);
-                transform: rotateY(315deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella15 ease 6s forwards;
-                animation: umbrella15 ease 6s forwards; }
-
-@-webkit-keyframes umbrella15 {
-  0% {
-    -webkit-transform: rotateY(315deg) translateZ(5px) rotateX(0);
-            transform: rotateY(315deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(315deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(315deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella15 {
-  0% {
-    -webkit-transform: rotateY(315deg) translateZ(5px) rotateX(0);
-            transform: rotateY(315deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(315deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(315deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face16 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(337.5deg) translateZ(5px) rotateX(0);
-                transform: rotateY(337.5deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella16 ease 6s forwards;
-                animation: umbrella16 ease 6s forwards; }
-
-@-webkit-keyframes umbrella16 {
-  0% {
-    -webkit-transform: rotateY(337.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(337.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(337.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(337.5deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella16 {
-  0% {
-    -webkit-transform: rotateY(337.5deg) translateZ(5px) rotateX(0);
-            transform: rotateY(337.5deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(337.5deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(337.5deg) translateZ(5px) rotateX(50deg); } }
-      .wrapper .umbrella_wrap .umbrella .face17 {
-        background-color: rgba(200, 35, 35, 0.6);
-        -webkit-transform: rotateY(360deg) translateZ(5px) rotateX(0);
-                transform: rotateY(360deg) translateZ(5px) rotateX(0);
-        -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
-        -webkit-animation: umbrella17 ease 6s forwards;
-                animation: umbrella17 ease 6s forwards; }
-
-@-webkit-keyframes umbrella17 {
-  0% {
-    -webkit-transform: rotateY(360deg) translateZ(5px) rotateX(0);
-            transform: rotateY(360deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(360deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(360deg) translateZ(5px) rotateX(50deg); } }
-
-@keyframes umbrella17 {
-  0% {
-    -webkit-transform: rotateY(360deg) translateZ(5px) rotateX(0);
-            transform: rotateY(360deg) translateZ(5px) rotateX(0); }
-  100% {
-    -webkit-transform: rotateY(360deg) translateZ(5px) rotateX(50deg);
-            transform: rotateY(360deg) translateZ(5px) rotateX(50deg); } }
-    .wrapper .umbrella_wrap .hand {
-      position: absolute;
-      top: 30%;
-      left: 45%;
-      width: 3px;
-      height: 80px;
-      -webkit-transform-style: preserve-3d;
-              transform-style: preserve-3d; }
-      .wrapper .umbrella_wrap .hand > div {
-        width: 100%;
-        height: 100%;
-        position: absolute; }
-      .wrapper .umbrella_wrap .hand .face1 {
-        background-color: rgba(50, 50, 30, 0.1);
-        -webkit-transform: rotateY(0deg) translateZ(1.5px) rotateX(0);
-                transform: rotateY(0deg) translateZ(1.5px) rotateX(0);
-        -webkit-clip-path: none; }
-      .wrapper .umbrella_wrap .hand .face2 {
-        background-color: rgba(50, 50, 30, 0.1);
-        -webkit-transform: rotateY(60deg) translateZ(1.5px) rotateX(0);
-                transform: rotateY(60deg) translateZ(1.5px) rotateX(0);
-        -webkit-clip-path: none; }
-      .wrapper .umbrella_wrap .hand .face3 {
-        background-color: rgba(50, 50, 30, 0.1);
-        -webkit-transform: rotateY(120deg) translateZ(1.5px) rotateX(0);
-                transform: rotateY(120deg) translateZ(1.5px) rotateX(0);
-        -webkit-clip-path: none; }
-      .wrapper .umbrella_wrap .hand .face4 {
-        background-color: rgba(50, 50, 30, 0.1);
-        -webkit-transform: rotateY(180deg) translateZ(1.5px) rotateX(0);
-                transform: rotateY(180deg) translateZ(1.5px) rotateX(0);
-        -webkit-clip-path: none; }
-      .wrapper .umbrella_wrap .hand .face5 {
-        background-color: rgba(50, 50, 30, 0.1);
-        -webkit-transform: rotateY(240deg) translateZ(1.5px) rotateX(0);
-                transform: rotateY(240deg) translateZ(1.5px) rotateX(0);
-        -webkit-clip-path: none; }
-      .wrapper .umbrella_wrap .hand .face6 {
-        background-color: rgba(50, 50, 30, 0.1);
-        -webkit-transform: rotateY(300deg) translateZ(1.5px) rotateX(0);
-                transform: rotateY(300deg) translateZ(1.5px) rotateX(0);
-        -webkit-clip-path: none; }
-      .wrapper .umbrella_wrap .hand .face7 {
-        background-color: rgba(50, 50, 30, 0.1);
-        -webkit-transform: rotateY(360deg) translateZ(1.5px) rotateX(0);
-                transform: rotateY(360deg) translateZ(1.5px) rotateX(0);
-        -webkit-clip-path: none; }
-
-.flw1 {
+/* line 113, ../sass/main.scss */
+.leader_container {
+  position: relative;
+  perspective: 2000px;
+  margin-top: 50px;
+}
+/* line 117, ../sass/main.scss */
+.leader_container .leader {
   width: 50px;
   height: 50px;
-  -webkit-transform: rotate3d(0.8, 0.2, 0.8, -60deg);
-          transform: rotate3d(0.8, 0.2, 0.8, -60deg); }
-  .flw1 .face1 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw1 .face2 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(36deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(36deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw1 .face3 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(72deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(72deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw1 .face4 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(108deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(108deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw1 .face5 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(144deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(144deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw1 .face6 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw1 .face7 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(216deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(216deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw1 .face8 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(252deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(252deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw1 .face9 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(288deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(288deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw1 .face10 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(324deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(324deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw1 .face11 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotateY(-40deg);
+}
+/* line 123, ../sass/main.scss */
+.leader_container .leader figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: block;
+  position: absolute;
+  background-color: #fff;
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(1) {
+  background-color: #fff;
+  top: 100%;
+  transform: translateZ(50px);
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(2) {
+  background-color: #000;
+  top: 150%;
+  transform: rotateX(90deg) translateY(150%);
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(3) {
+  background-color: #fff;
+  top: 200%;
+  transform: translateZ(100px);
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(4) {
+  background-color: #000;
+  top: 250%;
+  transform: rotateX(90deg) translateY(250%);
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(5) {
+  background-color: #fff;
+  top: 300%;
+  transform: translateZ(150px);
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(6) {
+  background-color: #000;
+  top: 350%;
+  transform: rotateX(90deg) translateY(350%);
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(7) {
+  background-color: #fff;
+  top: 400%;
+  transform: translateZ(200px);
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(8) {
+  background-color: #000;
+  top: 450%;
+  transform: rotateX(90deg) translateY(450%);
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(9) {
+  background-color: #fff;
+  top: 500%;
+  transform: translateZ(250px);
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(10) {
+  background-color: #000;
+  top: 550%;
+  transform: rotateX(90deg) translateY(550%);
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(11) {
+  background-color: #fff;
+  top: 600%;
+  transform: translateZ(300px);
+}
+/* line 98, ../sass/main.scss */
+.leader_container .leader figure:nth-child(12) {
+  background-color: #000;
+  top: 650%;
+  transform: rotateX(90deg) translateY(650%);
+}
 
-.flw2 {
-  width: 40px;
-  height: 40px;
-  -webkit-transform: rotate3d(0.6, 0.6, 0.1, 55deg);
-          transform: rotate3d(0.6, 0.6, 0.1, 55deg); }
-  .flw2 .face1 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw2 .face2 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(45deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(45deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw2 .face3 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(90deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(90deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw2 .face4 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(135deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(135deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw2 .face5 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw2 .face6 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(225deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(225deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw2 .face7 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(270deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(270deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw2 .face8 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(315deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(315deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw2 .face9 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
+/* line 136, ../sass/main.scss */
+.butterfly_container {
+  position: relative;
+  perspective: 2000px;
+}
+/* line 139, ../sass/main.scss */
+.butterfly_container .butterfly {
+  width: 25px;
+  height: 50px;
+  position: absolute;
+  transform-style: preserve-3d;
+  transform: rotate3d(0, 1, 0, 0deg);
+  animation: butterfly 6s linear infinite;
+}
+/* line 146, ../sass/main.scss */
+.butterfly_container .butterfly .wing {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#ff6e02, #ffff00 20%, #ff6e02) no-repeat 100% 100%;
+  border-radius: 100%;
+  position: absolute;
+  -webkit-clip-path: polygon(100% 30%, 60% 5%, 68% 0, 100% 40%, 30% 0%, 0% 80%, 100% 65%, 25% 90%, 100% 100%);
+}
+/* line 153, ../sass/main.scss */
+.butterfly_container .butterfly .wing.left {
+  left: 0;
+  transform-origin: 100% 50%;
+  transform: rotateX(90deg) rotateY(0deg);
+  animation: butterfly1 .3s ease infinite;
+}
+/* line 159, ../sass/main.scss */
+.butterfly_container .butterfly .wing.right {
+  right: 0;
+  transform-origin: 100% 50%;
+  transform: rotateX(90deg) rotateY(180deg);
+  animation: butterfly2 .3s ease infinite;
+}
 
-.flw3 {
-  width: 45px;
-  height: 45px;
-  -webkit-transform: rotate3d(0.6, 0.2, 0.8, 20deg);
-          transform: rotate3d(0.6, 0.2, 0.8, 20deg); }
-  .flw3 .face1 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw3 .face2 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(45deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(45deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw3 .face3 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(90deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(90deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw3 .face4 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(135deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(135deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw3 .face5 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw3 .face6 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(225deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(225deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw3 .face7 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(270deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(270deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw3 .face8 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(315deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(315deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw3 .face9 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-
-.flw4 {
-  width: 48px;
-  height: 48px;
-  -webkit-transform: rotate3d(0.5, 0, 0.1, -60deg);
-          transform: rotate3d(0.5, 0, 0.1, -60deg); }
-  .flw4 .face1 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw4 .face2 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(36deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(36deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw4 .face3 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(72deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(72deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw4 .face4 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(108deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(108deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw4 .face5 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(144deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(144deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw4 .face6 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw4 .face7 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(216deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(216deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw4 .face8 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(252deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(252deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw4 .face9 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(288deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(288deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw4 .face10 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(324deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(324deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-  .flw4 .face11 {
-    background-color: rgba(55, 55, 240, 0.4);
-    -webkit-transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
-            transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
-    -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0); }
-
-.box_wrap1 {
-  bottom: 20%;
-  left: 31%;
-  -webkit-transform: rotate3d(0.8, 0.6, 0.2, -10deg) scale(6);
-          transform: rotate3d(0.8, 0.6, 0.2, -10deg) scale(6); }
-
-.box_wrap2 {
-  bottom: 20%;
-  left: 68%;
-  -webkit-transform: rotate3d(0.8, 0.6, 0.2, -4deg) scale(6);
-          transform: rotate3d(0.8, 0.6, 0.2, -4deg) scale(6); }
-
-.box_wrap3 {
-  bottom: 20%;
-  left: 37%;
-  -webkit-transform: rotate3d(0.8, 0.6, 0.2, -14deg) scale(6);
-          transform: rotate3d(0.8, 0.6, 0.2, -14deg) scale(6); }
-
-.box_wrap4 {
-  bottom: 20%;
-  left: 23%;
-  -webkit-transform: rotate3d(0.8, 0.6, 0.2, -17deg) scale(6);
-          transform: rotate3d(0.8, 0.6, 0.2, -17deg) scale(6); }
-
-.box_wrap5 {
-  bottom: 20%;
-  left: 59%;
-  -webkit-transform: rotate3d(0.8, 0.6, 0.2, -15deg) scale(6);
-          transform: rotate3d(0.8, 0.6, 0.2, -15deg) scale(6); }
-
-.box_wrap6 {
-  bottom: 20%;
-  left: 65%;
-  -webkit-transform: rotate3d(0.8, 0.6, 0.2, -20deg) scale(6);
-          transform: rotate3d(0.8, 0.6, 0.2, -20deg) scale(6); }
-
-.box_wrap7 {
-  bottom: 20%;
-  left: 54%;
-  -webkit-transform: rotate3d(0.8, 0.6, 0.2, -17deg) scale(6);
-          transform: rotate3d(0.8, 0.6, 0.2, -17deg) scale(6); }
-
-.box_wrap8 {
-  bottom: 20%;
-  left: 55%;
-  -webkit-transform: rotate3d(0.8, 0.6, 0.2, -1deg) scale(6);
-          transform: rotate3d(0.8, 0.6, 0.2, -1deg) scale(6); }
-
-.box_wrap9 {
-  bottom: 20%;
-  left: 19%;
-  -webkit-transform: rotate3d(0.8, 0.6, 0.2, -5deg) scale(6);
-          transform: rotate3d(0.8, 0.6, 0.2, -5deg) scale(6); }
-
-@-webkit-keyframes flw {
+@keyframes butterfly {
   0% {
-    -webkit-transform: rotate3d(0.2, 0.4, 0.2, 20deg) translateY(10px) scale(1);
-            transform: rotate3d(0.2, 0.4, 0.2, 20deg) translateY(10px) scale(1); }
+    transform: rotate3d(0, 1, 0, 0deg) translate3d(-200px, 450px, 0px);
+  }
   100% {
-    -webkit-transform: rotate3d(0.2, 0.4, 0.2, 360deg) translateY(-400px) scale(1.6);
-            transform: rotate3d(0.2, 0.4, 0.2, 360deg) translateY(-400px) scale(1.6); } }
+    transform: rotate3d(0, 1, 0, -360deg) translate3d(-200px, 450px, 0px);
+  }
+}
+@keyframes butterfly1 {
+  0% {
+    transform: rotateX(90deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(90deg) rotateY(70deg);
+  }
+  100% {
+    transform: rotateX(90deg) rotateY(0deg);
+  }
+}
+@keyframes butterfly2 {
+  0% {
+    transform: rotateX(90deg) rotateY(180deg);
+  }
+  50% {
+    transform: rotateX(90deg) rotateY(110deg);
+  }
+  100% {
+    transform: rotateX(90deg) rotateY(180deg);
+  }
+}
+/* line 285, ../sass/main.scss */
+.robot_container {
+  perspective: 2000px;
+}
+/* line 287, ../sass/main.scss */
+.robot_container .robot {
+  transform-style: preserve-3d;
+  transform: rotate3d(0, 1, 0, 0deg);
+}
+/* line 290, ../sass/main.scss */
+.robot_container .robot .eye_wrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotate3d(0, 1, 0, 0deg);
+}
+/* line 294, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye {
+  transform-style: preserve-3d;
+}
+/* line 296, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye.eyeleft {
+  transform: rotate3d(0, 1, 0, 0deg);
+}
+/* line 299, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye.eyeright {
+  transform: rotate3d(0, 1, 0, 0deg) translateX(60px);
+}
+/* line 302, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section {
+  position: absolute;
+}
+/* line 304, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container {
+  transform-style: preserve-3d;
+  margin-top: 50px;
+}
+/* line 24, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 29, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  background-color: #2cb6e1;
+  border: 0 solid #333;
+}
+/* line 58, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box figure.front, .robot_container .robot .eye_wrapper .eye > section.box_container .box figure.back {
+  width: 35px;
+  height: 35px;
+}
+/* line 62, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box figure.right, .robot_container .robot .eye_wrapper .eye > section.box_container .box figure.left {
+  width: 70px;
+  height: 35px;
+  left: -17.5px;
+}
+/* line 67, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box figure.top, .robot_container .robot .eye_wrapper .eye > section.box_container .box figure.bottom {
+  width: 35px;
+  height: 70px;
+  top: -17.5px;
+}
+/* line 72, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box figure.front {
+  transform: rotateY(0deg) translateZ(35px);
+}
+/* line 75, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box figure.back {
+  transform: rotateX(180deg) translateZ(35px);
+}
+/* line 78, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box figure.right {
+  transform: rotateY(90deg) translateZ(17.5px);
+}
+/* line 81, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box figure.left {
+  transform: rotateY(-90deg) translateZ(17.5px);
+}
+/* line 84, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box figure.top {
+  transform: rotateX(90deg) translateZ(17.5px);
+}
+/* line 87, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box figure.bottom {
+  transform: rotateX(-90deg) translateZ(17.5px);
+}
+/* line 308, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box {
+  transform: rotateX(1deg);
+}
+/* line 310, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.box_container .box .front {
+  border-radius: 100%;
+  border: none;
+  background: radial-gradient(closest-corner at 38% 38%, #ffffff, #666666 40%, #000000) no-repeat 100% 100%;
+  box-shadow: 2px 2px 10px #000;
+  transform: rotateY(0deg) translateZ(40px);
+}
+/* line 319, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container {
+  transform-style: preserve-3d;
+  margin-top: 100px;
+}
+/* line 214, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel {
+  width: 20px;
+  height: 30px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 219, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 19px;
+  height: 28px;
+  left: -0.5px;
+  top: 0;
+  border: 1px solid rgba(255, 255, 0, 0.4);
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel figure:nth-child(1) {
+  background-color: #fded3b;
+  transform: rotateY(0deg) translateZ(27.47477px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel figure:nth-child(2) {
+  background-color: #fded3b;
+  transform: rotateY(40deg) translateZ(27.47477px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel figure:nth-child(3) {
+  background-color: #fded3b;
+  transform: rotateY(80deg) translateZ(27.47477px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel figure:nth-child(4) {
+  background-color: #fded3b;
+  transform: rotateY(120deg) translateZ(27.47477px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel figure:nth-child(5) {
+  background-color: #fded3b;
+  transform: rotateY(160deg) translateZ(27.47477px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel figure:nth-child(6) {
+  background-color: #fded3b;
+  transform: rotateY(200deg) translateZ(27.47477px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel figure:nth-child(7) {
+  background-color: #fded3b;
+  transform: rotateY(240deg) translateZ(27.47477px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel figure:nth-child(8) {
+  background-color: #fded3b;
+  transform: rotateY(280deg) translateZ(27.47477px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel figure:nth-child(9) {
+  background-color: #fded3b;
+  transform: rotateY(320deg) translateZ(27.47477px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel figure:nth-child(10) {
+  background-color: #fded3b;
+  transform: rotateY(360deg) translateZ(27.47477px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 323, ../sass/main.scss */
+.robot_container .robot .eye_wrapper .eye > section.carousel_container .carousel {
+  transform: rotateX(90deg) translateY(12px);
+  top: -47px;
+  left: 8px;
+}
+/* line 333, ../sass/main.scss */
+.robot_container .robot .neck .carousel_container {
+  transform-style: preserve-3d;
+}
+/* line 214, ../sass/main.scss */
+.robot_container .robot .neck .carousel_container .carousel {
+  width: 5px;
+  height: 60px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 219, ../sass/main.scss */
+.robot_container .robot .neck .carousel_container .carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 60px;
+  left: -0.5px;
+  top: 0;
+  border: 0 solid #333;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .neck .carousel_container .carousel figure:nth-child(1) {
+  background-color: #30ad7c;
+  transform: rotateY(0deg) translateZ(4.12915px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .neck .carousel_container .carousel figure:nth-child(2) {
+  background-color: #30ad7c;
+  transform: rotateY(72deg) translateZ(4.12915px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .neck .carousel_container .carousel figure:nth-child(3) {
+  background-color: #30ad7c;
+  transform: rotateY(144deg) translateZ(4.12915px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .neck .carousel_container .carousel figure:nth-child(4) {
+  background-color: #30ad7c;
+  transform: rotateY(216deg) translateZ(4.12915px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .neck .carousel_container .carousel figure:nth-child(5) {
+  background-color: #30ad7c;
+  transform: rotateY(288deg) translateZ(4.12915px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .neck .carousel_container .carousel figure:nth-child(6) {
+  background-color: #30ad7c;
+  transform: rotateY(360deg) translateZ(4.12915px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 336, ../sass/main.scss */
+.robot_container .robot .neck .carousel_container .carousel {
+  transform: rotateX(0deg) translateZ(12px);
+  top: 75px;
+  left: 45px;
+}
+/* line 344, ../sass/main.scss */
+.robot_container .robot .body .box_container {
+  transform-style: preserve-3d;
+}
+/* line 24, ../sass/main.scss */
+.robot_container .robot .body .box_container .box {
+  width: 120px;
+  height: 70px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 29, ../sass/main.scss */
+.robot_container .robot .body .box_container .box figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  background-color: #fc4040;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+/* line 58, ../sass/main.scss */
+.robot_container .robot .body .box_container .box figure.front, .robot_container .robot .body .box_container .box figure.back {
+  width: 118px;
+  height: 68px;
+}
+/* line 62, ../sass/main.scss */
+.robot_container .robot .body .box_container .box figure.right, .robot_container .robot .body .box_container .box figure.left {
+  width: 88px;
+  height: 68px;
+  left: 15px;
+}
+/* line 67, ../sass/main.scss */
+.robot_container .robot .body .box_container .box figure.top, .robot_container .robot .body .box_container .box figure.bottom {
+  width: 118px;
+  height: 88px;
+  top: -10px;
+}
+/* line 72, ../sass/main.scss */
+.robot_container .robot .body .box_container .box figure.front {
+  transform: rotateY(0deg) translateZ(45px);
+}
+/* line 75, ../sass/main.scss */
+.robot_container .robot .body .box_container .box figure.back {
+  transform: rotateX(180deg) translateZ(45px);
+}
+/* line 78, ../sass/main.scss */
+.robot_container .robot .body .box_container .box figure.right {
+  transform: rotateY(90deg) translateZ(60px);
+}
+/* line 81, ../sass/main.scss */
+.robot_container .robot .body .box_container .box figure.left {
+  transform: rotateY(-90deg) translateZ(60px);
+}
+/* line 84, ../sass/main.scss */
+.robot_container .robot .body .box_container .box figure.top {
+  transform: rotateX(90deg) translateZ(35px);
+}
+/* line 87, ../sass/main.scss */
+.robot_container .robot .body .box_container .box figure.bottom {
+  transform: rotateX(-90deg) translateZ(35px);
+}
+/* line 347, ../sass/main.scss */
+.robot_container .robot .body .box_container .box {
+  transform: rotateX(1deg);
+  top: 132px;
+  left: -11.25px;
+}
+/* line 353, ../sass/main.scss */
+.robot_container .robot .body .carousel_container {
+  transform-style: preserve-3d;
+  position: absolute;
+}
+/* line 214, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel {
+  width: 20px;
+  height: 30px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 219, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 19px;
+  height: 28px;
+  left: -0.5px;
+  top: 0;
+  border: 1px solid rgba(255, 255, 0, 0.4);
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(1) {
+  background-color: #fded3b;
+  transform: rotateY(0deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(2) {
+  background-color: #fded3b;
+  transform: rotateY(30deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(3) {
+  background-color: #fded3b;
+  transform: rotateY(60deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(4) {
+  background-color: #fded3b;
+  transform: rotateY(90deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(5) {
+  background-color: #fded3b;
+  transform: rotateY(120deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(6) {
+  background-color: #fded3b;
+  transform: rotateY(150deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(7) {
+  background-color: #fded3b;
+  transform: rotateY(180deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(8) {
+  background-color: #fded3b;
+  transform: rotateY(210deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(9) {
+  background-color: #fded3b;
+  transform: rotateY(240deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(10) {
+  background-color: #fded3b;
+  transform: rotateY(270deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(11) {
+  background-color: #fded3b;
+  transform: rotateY(300deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(12) {
+  background-color: #fded3b;
+  transform: rotateY(330deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .body .carousel_container .carousel figure:nth-child(13) {
+  background-color: #fded3b;
+  transform: rotateY(360deg) translateZ(37.32051px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 357, ../sass/main.scss */
+.robot_container .robot .body .carousel_container.handleft {
+  top: 180px;
+  left: 10px;
+  transform: rotateX(90deg) rotateY(260deg) translateY(-4px);
+}
+/* line 362, ../sass/main.scss */
+.robot_container .robot .body .carousel_container.handright {
+  top: 170px;
+  left: 85px;
+  transform: rotateX(90deg) rotateY(35deg) translateY(-4px);
+}
+/* line 370, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container {
+  transform-style: preserve-3d;
+  position: relative;
+}
+/* line 214, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel {
+  width: 15px;
+  height: 40px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 219, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 9px;
+  height: 32px;
+  left: -1px;
+  top: 0;
+  border: 4px solid #222;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(1) {
+  background-color: #000;
+  transform: rotateY(0deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(2) {
+  background-color: #000;
+  transform: rotateY(30deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(3) {
+  background-color: #000;
+  transform: rotateY(60deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(4) {
+  background-color: #000;
+  transform: rotateY(90deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(5) {
+  background-color: #000;
+  transform: rotateY(120deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(6) {
+  background-color: #000;
+  transform: rotateY(150deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(7) {
+  background-color: #000;
+  transform: rotateY(180deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(8) {
+  background-color: #000;
+  transform: rotateY(210deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(9) {
+  background-color: #000;
+  transform: rotateY(240deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(10) {
+  background-color: #000;
+  transform: rotateY(270deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(11) {
+  background-color: #000;
+  transform: rotateY(300deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(12) {
+  background-color: #000;
+  transform: rotateY(330deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel figure:nth-child(13) {
+  background-color: #000;
+  transform: rotateY(360deg) translateZ(29.85641px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 374, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel {
+  transform: rotateX(90deg) rotateZ(90deg);
+}
+/* line 376, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel.left {
+  top: 200px;
+  right: 15px;
+}
+/* line 380, ../sass/main.scss */
+.robot_container .robot .foot .carousel_container .carousel.right {
+  top: 200px;
+  left: 115px;
+}
+
+/* line 455, ../sass/main.scss */
+.umbrella {
+  transform-style: preserve-3d;
+  transform: rotate3d(0.6, 1, 0.2, 30deg);
+}
+/* line 458, ../sass/main.scss */
+.umbrella .carousel_container.top {
+  transform-style: preserve-3d;
+  position: relative;
+}
+/* line 423, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel {
+  width: 34px;
+  height: 54px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 428, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 34px;
+  height: 54px;
+  left: 0;
+  top: 0;
+  border: 0 solid transparent;
+  transform-origin: center top;
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(1) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(0deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella1 ease 6s forwards;
+}
+@keyframes umbrella1 {
+  0% {
+    transform: rotateY(0deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(0deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(2) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(22.5deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella2 ease 6s forwards;
+}
+@keyframes umbrella2 {
+  0% {
+    transform: rotateY(22.5deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(22.5deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(3) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(45deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella3 ease 6s forwards;
+}
+@keyframes umbrella3 {
+  0% {
+    transform: rotateY(45deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(45deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(4) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(67.5deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella4 ease 6s forwards;
+}
+@keyframes umbrella4 {
+  0% {
+    transform: rotateY(67.5deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(67.5deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(5) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(90deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella5 ease 6s forwards;
+}
+@keyframes umbrella5 {
+  0% {
+    transform: rotateY(90deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(90deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(6) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(112.5deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella6 ease 6s forwards;
+}
+@keyframes umbrella6 {
+  0% {
+    transform: rotateY(112.5deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(112.5deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(7) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(135deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella7 ease 6s forwards;
+}
+@keyframes umbrella7 {
+  0% {
+    transform: rotateY(135deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(135deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(8) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(157.5deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella8 ease 6s forwards;
+}
+@keyframes umbrella8 {
+  0% {
+    transform: rotateY(157.5deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(157.5deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(9) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(180deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella9 ease 6s forwards;
+}
+@keyframes umbrella9 {
+  0% {
+    transform: rotateY(180deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(180deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(10) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(202.5deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella10 ease 6s forwards;
+}
+@keyframes umbrella10 {
+  0% {
+    transform: rotateY(202.5deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(202.5deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(11) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(225deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella11 ease 6s forwards;
+}
+@keyframes umbrella11 {
+  0% {
+    transform: rotateY(225deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(225deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(12) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(247.5deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella12 ease 6s forwards;
+}
+@keyframes umbrella12 {
+  0% {
+    transform: rotateY(247.5deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(247.5deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(13) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(270deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella13 ease 6s forwards;
+}
+@keyframes umbrella13 {
+  0% {
+    transform: rotateY(270deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(270deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(14) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(292.5deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella14 ease 6s forwards;
+}
+@keyframes umbrella14 {
+  0% {
+    transform: rotateY(292.5deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(292.5deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(15) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(315deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella15 ease 6s forwards;
+}
+@keyframes umbrella15 {
+  0% {
+    transform: rotateY(315deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(315deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(16) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(337.5deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella16 ease 6s forwards;
+}
+@keyframes umbrella16 {
+  0% {
+    transform: rotateY(337.5deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(337.5deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 413, ../sass/main.scss */
+.umbrella .carousel_container.top .carousel figure:nth-child(17) {
+  background-color: rgba(200, 35, 35, 0.6);
+  transform: rotateY(360deg) translateZ(5px) rotateX(50deg);
+  -webkit-clip-path: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
+  animation: umbrella17 ease 6s forwards;
+}
+@keyframes umbrella17 {
+  0% {
+    transform: rotateY(360deg) translateZ(5px) rotateX(0);
+  }
+  100% {
+    transform: rotateY(360deg) translateZ(5px) rotateX(50deg);
+  }
+}
+/* line 463, ../sass/main.scss */
+.umbrella .carousel_container.hand {
+  transform-style: preserve-3d;
+  position: relative;
+  transform: translateX(15px) translateY(10px);
+}
+/* line 214, ../sass/main.scss */
+.umbrella .carousel_container.hand .carousel {
+  width: 2px;
+  height: 80px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 219, ../sass/main.scss */
+.umbrella .carousel_container.hand .carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 3px;
+  height: 80px;
+  left: -0.5px;
+  top: 0;
+  border: 0 solid transparent;
+}
+/* line 205, ../sass/main.scss */
+.umbrella .carousel_container.hand .carousel figure:nth-child(1) {
+  background-color: #323232;
+  transform: rotateY(0deg) translateZ(1.73205px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.umbrella .carousel_container.hand .carousel figure:nth-child(2) {
+  background-color: #323232;
+  transform: rotateY(60deg) translateZ(1.73205px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.umbrella .carousel_container.hand .carousel figure:nth-child(3) {
+  background-color: #323232;
+  transform: rotateY(120deg) translateZ(1.73205px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.umbrella .carousel_container.hand .carousel figure:nth-child(4) {
+  background-color: #323232;
+  transform: rotateY(180deg) translateZ(1.73205px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.umbrella .carousel_container.hand .carousel figure:nth-child(5) {
+  background-color: #323232;
+  transform: rotateY(240deg) translateZ(1.73205px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.umbrella .carousel_container.hand .carousel figure:nth-child(6) {
+  background-color: #323232;
+  transform: rotateY(300deg) translateZ(1.73205px) rotateX(0);
+  -webkit-clip-path: none;
+}
+/* line 205, ../sass/main.scss */
+.umbrella .carousel_container.hand .carousel figure:nth-child(7) {
+  background-color: #323232;
+  transform: rotateY(360deg) translateZ(1.73205px) rotateX(0);
+  -webkit-clip-path: none;
+}
 
 @keyframes flw {
   0% {
-    -webkit-transform: rotate3d(0.2, 0.4, 0.2, 20deg) translateY(10px) scale(1);
-            transform: rotate3d(0.2, 0.4, 0.2, 20deg) translateY(10px) scale(1); }
+    transform: rotate3d(0.2, 0.4, 0.2, 20deg) translateY(10px) scale(1);
+  }
   100% {
-    -webkit-transform: rotate3d(0.2, 0.4, 0.2, 360deg) translateY(-400px) scale(1.6);
-            transform: rotate3d(0.2, 0.4, 0.2, 360deg) translateY(-400px) scale(1.6); } }
+    transform: rotate3d(0.2, 0.4, 0.2, 360deg) translateY(-400px) scale(1.6);
+  }
+}
+/* line 527, ../sass/main.scss */
+.flw {
+  display: inline-block;
+  position: absolute;
+  bottom: 0%;
+  right: 6%;
+  transform-style: preserve-3d;
+  transform-origin: 0% 0%;
+  transform: rotate3d(0.2, 0.4, 0.2, 20deg) translateY(10px) scale(1);
+  animation: flw ease 6s forwards;
+}
+/* line 536, ../sass/main.scss */
+.flw .carousel_container {
+  transform-style: preserve-3d;
+  position: relative;
+}
+/* line 540, ../sass/main.scss */
+.flw .carousel_container .carousel figure {
+  border-radius: 100%;
+  transform-origin: center bottom;
+  box-shadow: 0 0 8px 0 rgba(255, 255, 0, 0.2);
+}
+/* line 214, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 219, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  left: 0;
+  top: 0;
+  border: 0 solid transparent;
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure:nth-child(1) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure:nth-child(2) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(36deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure:nth-child(3) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(72deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure:nth-child(4) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(108deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure:nth-child(5) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(144deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure:nth-child(6) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure:nth-child(7) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(216deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure:nth-child(8) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(252deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure:nth-child(9) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(288deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure:nth-child(10) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(324deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel figure:nth-child(11) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 548, ../sass/main.scss */
+.flw .carousel_container.flw1 .carousel {
+  position: relative;
+  transform: rotate3d(0.8, 0.2, 0.8, -60deg);
+}
+/* line 214, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 219, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  left: 0;
+  top: 0;
+  border: 0 solid transparent;
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel figure:nth-child(1) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel figure:nth-child(2) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(45deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel figure:nth-child(3) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(90deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel figure:nth-child(4) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(135deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel figure:nth-child(5) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel figure:nth-child(6) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(225deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel figure:nth-child(7) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(270deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel figure:nth-child(8) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(315deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel figure:nth-child(9) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 555, ../sass/main.scss */
+.flw .carousel_container.flw2 .carousel {
+  position: relative;
+  transform: rotate3d(0.6, 0.6, 0.1, 55deg);
+}
+/* line 214, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel {
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 219, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  left: 0;
+  top: 0;
+  border: 0 solid transparent;
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel figure:nth-child(1) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel figure:nth-child(2) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(45deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel figure:nth-child(3) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(90deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel figure:nth-child(4) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(135deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel figure:nth-child(5) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel figure:nth-child(6) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(225deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel figure:nth-child(7) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(270deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel figure:nth-child(8) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(315deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel figure:nth-child(9) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 562, ../sass/main.scss */
+.flw .carousel_container.flw3 .carousel {
+  position: relative;
+  transform: rotate3d(0.6, 0.2, 0.8, 20deg);
+}
+/* line 214, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+/* line 219, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  left: 0;
+  top: 0;
+  border: 0 solid transparent;
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure:nth-child(1) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(0deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure:nth-child(2) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(36deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure:nth-child(3) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(72deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure:nth-child(4) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(108deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure:nth-child(5) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(144deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure:nth-child(6) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(180deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure:nth-child(7) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(216deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure:nth-child(8) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(252deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure:nth-child(9) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(288deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure:nth-child(10) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(324deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 205, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel figure:nth-child(11) {
+  background-color: rgba(55, 55, 240, 0.4);
+  transform: rotateY(360deg) translateZ(-15px) rotateX(-45deg);
+  -webkit-clip-path: polygon(0 0, 50% 50%, 90% 0, 0 0);
+}
+/* line 569, ../sass/main.scss */
+.flw .carousel_container.flw4 .carousel {
+  position: relative;
+  transform: rotate3d(0.5, 0, 0.1, -60deg);
+}
