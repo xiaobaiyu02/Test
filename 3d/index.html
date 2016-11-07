@@ -3,16 +3,136 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-	<link href="/css/print.css" media="print" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<!--[if IE]>
-	  <link href="/css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-	<![endif]-->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var val = {
+				tx: 0,
+				ty: 0,
+				tz: 0,
+				rx: 0,
+				ry: 0,
+				rz: 0
+			};
+			function operate(ele, type, flag, step){
+				switch(type){
+					case("tx"):
+						if(flag)
+							val.tx += step;
+						else
+							val.tx -= step;
+						break;
+					case("ty"):
+						if(flag)
+							val.ty += step;
+						else
+							val.ty -= step;
+						break;
+					case("tz"):
+						if(flag)
+							val.tz += step;
+						else
+							val.tz -= step;
+						break;
+					case("rx"):
+						if(flag)
+							val.rx += step;
+						else
+							val.rx -= step;
+						break;
+					case("ry"):
+						if(flag)
+							val.ry += step;
+						else
+							val.ry -= step;
+						break;
+					case("rz"):
+						if(flag)
+							val.rz += step;
+						else
+							val.rz -= step;
+						break;
+					default:
+						val.tx = 0;
+						val.ty = 0;
+						val.tz = 0;
+						val.rx = 0;
+						val.ry = 0;
+						val.rz = 0;
+				};
+				ele.css('transform', 'translateX('+ val.tx +'px) translateY('+ val.ty +'px) translateZ('+ val.tz +'px) rotateX('+ val.rx +'deg) rotateY('+ val.ry +'deg) rotateZ('+ val.rz +'deg)');
+			}
+			var operType = 'transform';
+
+			// 移动：q  (shift+)x, (shift+)y, (shift+)z
+			// 旋转: w  (shift+)x, (shift+)y, (shift+)z
+			$('body').on('keydown', function(e){
+				if(e.keyCode == 81){
+					operType = 'transform';
+				}
+				else if(e.keyCode == 87){
+					operType = 'rotate';
+				}
+				else{
+					var flag = false, type = 't';
+					if(e.shiftKey) flag = true;
+					if(operType == 'transform')
+						type = 't';
+					else
+						type = 'r';
+
+					switch(e.keyCode){
+						case(88):
+							operate($("#robot"), type+'x', flag, 5);
+							break;
+						case(89):
+							operate($("#robot"), type+'y', flag, 5);
+							break;
+						case(90):
+							operate($("#robot"), type+'z', flag, 5);
+							break;
+						case(32):
+							operate($("#robot"), '');
+							break;
+					}
+
+				};
+			});
+			//------------------------------------------------------------
+			function prom(){
+				var action = prompt("happy sad or mad?");
+				if(action){
+					$("body").attr("class", '');
+					$("body").addClass(action);
+				}
+			};
+			$("#robot").on('click', function(){ prom(); });
+			//-------------------------------------------------------------
+			function flw(num){
+				for(var i=1; i<=num; i++){
+					$('body').append('<section class="carousel_container flw flw'+ i +'">'+
+										'<div class="carousel">'+
+											'<figure></figure>'+
+											'<figure></figure>'+
+											'<figure></figure>'+
+											'<figure></figure>'+
+											'<figure></figure>'+
+											'<figure></figure>'+
+											'<figure></figure>'+
+											'<figure></figure>'+
+										'</div></section>');
+				}
+			};
+			flw(15);
+		})
+	
+
+	</script>
 </head>
 <body>
 	<div class="robot_container">
-		<div class="robot">
+		<div class="robot" id="robot">
 			<div class="eye_wrapper">
 				<div class="eye eyeleft">
 					<section class="box_container">
@@ -173,66 +293,17 @@
 	</div>
 
 	<div class="butterfly_container">
-		<div class="butterfly">
+		<div class="butterfly butterfly1">
 			<div class="wing left"></div>
 			<div class="wing right"></div>
 		</div>
 	</div>
-	
-
-	<div class="flw">
-		<section class="carousel_container flw1">
-			<div class="carousel">
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-			</div>
-		</section>
-		<section class="carousel_container flw2">
-			<div class="carousel">
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-			</div>
-		</section>
-		<section class="carousel_container flw3">
-			<div class="carousel">
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-			</div>
-		</section>
-	    <section class="carousel_container flw4">
-			<div class="carousel">
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-				<figure></figure>
-			</div>
-		</section>
+	<div class="butterfly_container">
+		<div class="butterfly butterfly2">
+			<div class="wing left"></div>
+			<div class="wing right"></div>
+		</div>
 	</div>
+
 </body>
 </html>

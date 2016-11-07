@@ -14,6 +14,7 @@ $shadow-base: rgba(255, 255, 0, .3);
 body{
 	width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 	background: radial-gradient(#351454, #2c1146 20% , #1f0c32) no-repeat 100% 100%;
 	display: flex;
 	justify-content: space-around;
@@ -60,14 +61,14 @@ body{
 					height: $height - $border*2;
 				}
 				&.right, &.left{
-				  width: $width - $border*2;
-				  height: $height - $border*2;
-				  left: ($length - $width)/2;
+					width: $width - $border*2;
+					height: $height - $border*2;
+					left: ($length - $width)/2;
 				}
 				&.top, &.bottom{
-				  width: $length - $border*2;
-				  height: $width - $border*2;
-				  top: ($height - $width)/2;
+					width: $length - $border*2;
+					height: $width - $border*2;
+					top: ($height - $width)/2;
 				}
 				&.front{
 					transform: rotateY(0deg) translateZ($width/2);
@@ -133,20 +134,26 @@ body{
 }
 
 //------------------------------------butterfly----------------------------------------------
+$butterfly1-width: 18px;
+$butterfly1-height: 30px;
+$butterfly1-color1: #ff6e02;
+$butterfly1-color2: #ffff00;
+
+$butterfly2-width: 20px;
+$butterfly2-height: 35px;
+$butterfly2-color1: #ff6e02;
+$butterfly2-color2: #ffff00;
+
 .butterfly_container{
 	position: relative;
 	perspective: $perspective;
 	.butterfly{
-		width: 25px;
-		height: 50px;
 		position: absolute;
 		transform-style: preserve-3d;
 		transform: rotate3d(0, 1, 0, 0deg);
-		animation: butterfly 6s linear infinite;
 		.wing{
 			width: 100%;
 			height: 100%;
-			background: radial-gradient(#ff6e02, #ffff00 20% , #ff6e02) no-repeat 100% 100%;
 			border-radius: 100%;
 			position: absolute;
 			-webkit-clip-path: polygon(100% 30%, 60% 5%, 68% 0, 100% 40%, 30% 0%, 0% 80%, 100% 65%, 25% 90%, 100% 100%);
@@ -154,28 +161,51 @@ body{
 				left: 0;
 				transform-origin: 100% 50%;
 				transform: rotateX(90deg) rotateY(0deg);
-				animation: butterfly1 .3s ease infinite;
+				animation: butterflyWingleft .3s ease infinite;
 			}
 			&.right{
 				right: 0;
 				transform-origin: 100% 50%;
 				transform: rotateX(90deg) rotateY(180deg);
-				animation: butterfly2 .3s ease infinite;
+				animation: butterflyWingright .3s ease infinite;
+			}
+		}
+		&.butterfly1{
+			width: $butterfly1-width;
+			height: $butterfly1-height;
+			animation: butterfly1 8s linear infinite;
+			.wing{
+				background: radial-gradient($butterfly1-color1, $butterfly1-color2 20% , $butterfly1-color1) no-repeat 100% 100%;
+			}
+		}
+		&.butterfly2{
+			width: $butterfly2-width;
+			height: $butterfly2-height;
+			animation: butterfly2 10s linear infinite;
+			.wing{
+				background: radial-gradient($butterfly2-color1, $butterfly2-color2 20% , $butterfly2-color1) no-repeat 100% 100%;
 			}
 		}
 	}
 }
 
-@keyframes butterfly{
+@keyframes butterfly1{
 	0%{
-		transform: rotate3d(0, 1, 0, 0deg) translate3d(-200px, 450px, 0px);
+		transform: rotate3d(0, 1, 0, 0deg) translate3d(-200px, 450px, -100px);
 	}
 	100%{
-		transform: rotate3d(0, 1, 0, -360deg) translate3d(-200px, 450px, 0px);
+		transform: rotate3d(0.3, 1, 0.2, -360deg) translate3d(-200px, 450px, -100px);
 	}
 }
-
-@keyframes butterfly1{
+@keyframes butterfly2{
+	0%{
+		transform: rotate3d(0, 1, 0, 0deg) translate3d(300px, 200px, -100px);
+	}
+	100%{
+		transform: rotate3d(0.1, 1, 0.1, 360deg) translate3d(300px, 200px, -100px);
+	}
+}
+@keyframes butterflyWingleft{
 	0%{
 		transform: rotateX(90deg) rotateY(0deg);
 	}
@@ -187,7 +217,7 @@ body{
 	}
 }
 
-@keyframes butterfly2{
+@keyframes butterflyWingright{
 	0%{
 		transform: rotateX(90deg) rotateY(180deg);
 	}
@@ -272,17 +302,25 @@ $robot-footcarousel-border: 4px;
 $robot-footcarousel-border-color: #222;
 $robot-footcarousel-num: 12;
 $robot-footcarousel-tz: round($robot-footcarousel-width/2)/tan(180deg/$robot-footcarousel-num);
+$robot-footcover: $robot-footcarousel-tz*2;
 
 $robot-handcarousel-width: 20px;
 $robot-handcarousel-height: 30px;
-$robot-handcarousel-color: #fded3b;
+$robot-handcarousel-color: #3c5cff;
 $robot-handcarousel-gap: -1px;
 $robot-handcarousel-border: 1px;
 $robot-handcarousel-border-color: rgba(255,255,0,.4);
 $robot-handcarousel-num: 12;
 $robot-handcarousel-tz: round($robot-handcarousel-width/2)/tan(180deg/$robot-handcarousel-num);
 
+$robot-tie-color: #fded3b;
+
 .robot_container{
+	position: absolute;
+	// left: 650px;
+	// top: 150px;
+	left: 45%;
+	top: 20%;
 	perspective: $perspective;
 	.robot{
 		transform-style: preserve-3d;
@@ -290,7 +328,7 @@ $robot-handcarousel-tz: round($robot-handcarousel-width/2)/tan(180deg/$robot-han
 		.eye_wrapper{
 			position: relative;
 			transform-style: preserve-3d;
-			transform: rotate3d(0, 1, 0, 0deg);
+			transform: rotate3d(1, 1, 0, 0deg);
 			.eye{
 				transform-style: preserve-3d;
 				&.eyeleft{
@@ -313,6 +351,7 @@ $robot-handcarousel-tz: round($robot-handcarousel-width/2)/tan(180deg/$robot-han
 								background: radial-gradient(38% 38%, closest-corner, #fff, #666 40%, #000) no-repeat 100% 100%;
 								box-shadow: 2px 2px 10px #000;
 								transform: rotateY(0deg) translateZ(40px);
+								background-size: 100% 100%;
 							}
 						}
 					}
@@ -335,7 +374,7 @@ $robot-handcarousel-tz: round($robot-handcarousel-width/2)/tan(180deg/$robot-han
 				@include render-carousel($robot-neckcarousel-width, $robot-neckcarousel-height, $robot-neckcarousel-color, $robot-neckcarousel-num, $robot-neckcarousel-tz, $robot-neckcarousel-gap, $robot-neckcarousel-border, $robot-neckcarousel-border-color);
 				.carousel{
 					transform: rotateX(0deg) translateZ(12px);
-					top: 75px;
+					top: 80px;
 					left: 45px;
 				}
 			}
@@ -348,6 +387,33 @@ $robot-handcarousel-tz: round($robot-handcarousel-width/2)/tan(180deg/$robot-han
 					transform: rotateX(1deg);
 					top: $robot-bodybox-length+$robot-neckcarousel-height/5;
 					left: -$robot-bodybox-width/8;
+					.front{
+						&:after{
+							content: "";
+							display: block;
+							width: 14px;
+							height: 14px;
+							position: absolute;
+							left: 0;
+							right: 0;
+							margin: 0 auto;
+							border-radius: 100%;
+							background: -webkit-radial-gradient(#c045ff, #222);
+						}
+						&:before{
+							content: "";
+							display: block;
+							width: 30%;
+							height: 90%;
+							position: absolute;
+							left: 0;
+							right: 0;
+							margin: 0 auto;
+							background: -webkit-repeating-linear-gradient(top left, #222, #222 5px, #c045ff 5px, #c045ff 10px);
+							-webkit-clip-path: polygon(50% 0, 100% 90%, 0 50%, 50% 0);
+							background-color: #333;
+						}
+					}
 				}
 			}
 			.carousel_container{
@@ -355,7 +421,7 @@ $robot-handcarousel-tz: round($robot-handcarousel-width/2)/tan(180deg/$robot-han
 				position: absolute;
 				@include render-carousel($robot-handcarousel-width, $robot-handcarousel-height, $robot-handcarousel-color, $robot-handcarousel-num, $robot-handcarousel-tz, $robot-handcarousel-gap, $robot-handcarousel-border, $robot-handcarousel-border-color);
 				&.handleft{
-					top: 180px;
+					top: 184px;
 					left: 10px;
 					transform: rotateX(90deg) rotateY(260deg) translateY(-4px);
 				}
@@ -381,13 +447,26 @@ $robot-handcarousel-tz: round($robot-handcarousel-width/2)/tan(180deg/$robot-han
 						top: 200px;
 						left: 115px;
 					}
+					&:before{
+						content: "";
+						display: block;
+						position: absolute;
+						top: 0;
+						left: ($robot-footcarousel-tz)*(-1)+$robot-footcarousel-width/2;
+						width: $robot-footcover;
+						height: $robot-footcover;
+						background-color: $robot-footcarousel-border-color;
+						border-radius: 100%;
+						transform: rotateX(90deg) translateZ(0px);
+						background: -webkit-repeating-linear-gradient($robot-footcarousel-border-color, $robot-footcarousel-border-color 10px, $robot-footcarousel-color 14px, $robot-footcarousel-color 14px);
+					}
 				}
 			}
 		}
 	}	
 }
 
-// ------------------------------------------umbrella-----------------------------------------------
+// ------------------------------------------umbrella-------------------------------------------------------------
 $umbrella-width: 34px;
 $umbrella-height: 54px;
 $umbrella-num: 16;
@@ -396,11 +475,11 @@ $umbrella-gap: 0;
 $umbrella-border: 0;
 $umbrella-border-color: transparent;
 $umbrella-tz: 5px;
-$umbrella-rotateX: 50deg;
+$umbrella-rotateX: 0deg;
 $umbrella-clippath: polygon(20% 100%, 80% 100%, 58.3333% 0, 41.6666% 0);
 
 $umbrella-hand-width: 2px;
-$umbrella-hand-height: 80px;
+$umbrella-hand-height: 90px;
 $umbrella-hand-num: 6;
 $umbrella-hand-color: rgba(50, 50, 50, 1);
 $umbrella-hand-tz: round($umbrella-hand-width/2)/tan(180deg/$umbrella-hand-num);
@@ -408,13 +487,14 @@ $umbrella-hand-gap: -1px;
 $umbrella-hand-border: 0;
 $umbrella-hand-border-color: transparent;
 
+
 @mixin umbrella-carousel($num, $bgc, $translateZ, $rotateX:0, $clippath: none){
 	@for $i from 0 through $num{
 		&:nth-child(#{$i+1}){
 			background-color: $bgc;
 			transform: rotateY(360/$num*$i+deg) translateZ($translateZ) rotateX($rotateX);
 			-webkit-clip-path: $clippath;
-			@include umbrella-animate(umbrella#{$i+1}, 360/$num*$i+deg, $translateZ, $umbrella_rotateX);
+			// @include umbrella-animate1(umbrella#{$i+1}, 360/$num*$i+deg, $translateZ, $umbrella_rotateX);
 		}
 	}
 }
@@ -440,21 +520,14 @@ $umbrella-hand-border-color: transparent;
 	}
 }
 
-@mixin umbrella-animate($name, $rotateY, $translateZ, $rotateX){
-	@keyframes #{$name}{
-		0%{
-			transform: rotateY($rotateY) translateZ($translateZ) rotateX(0);
-		}
-		100%{
-			transform: rotateY($rotateY) translateZ($translateZ) rotateX($rotateX);
-		}
-	}
-	animation: $name ease 6s forwards;
-}
-
 .umbrella{
+	position: absolute;
+	// left: 450px;
+	// top: 400px;
+	left: 30%;
+	top: 60%;
 	transform-style: preserve-3d;
-	transform: rotate3d(0.6, 1, 0.2, 30deg);
+	transform: rotateX(60deg) rotateZ(-30deg) rotateY(0deg);
 	.carousel_container.top{
 		transform-style: preserve-3d;
 		position: relative;
@@ -468,109 +541,377 @@ $umbrella-hand-border-color: transparent;
 	}
 }
 
+
+
 // ------------------------------------------flower-----------------------------------------------
 $shadow-base: rgba(255, 255, 0, .2);
 
-$flw1-width: 50px;
-$flw1-height: 50px;
-$flw1-num: 10;
-$flw1-color: rgba(55, 55, 240, .4);
-$flw1-tz: -15px;
-$flw1-gap: 0;
-$flw1-border: 0;
-$flw1-border-color: transparent;
-$flw1-rotateX: -45deg;
-$flw1-clippath: polygon(0 0, 50% 50%, 90% 0, 0 0);
+$flw-width: 50px;
+$flw-height: 50px;
+$flw-num: 8;
+$flw-color: rgba(250, 135, 175, .1);
+$flw-tz: -15px;
+$flw-gap: 0;
+$flw-border: 0;
+$flw-border-color: transparent;
+$flw-rotateX: -45deg;
+$flw-clippath: polygon(0 0, 50% 50%, 90% 0, 0 0);
+$flw-totalNum: 15;
 
-$flw2-width: 40px;
-$flw2-height: 40px;
-$flw2-num: 8;
-$flw2-color: rgba(55, 55, 240, .4);
-$flw2-tz: -15px;
-$flw2-gap: 0;
-$flw2-border: 0;
-$flw2-border-color: transparent;
-$flw2-rotateX: -45deg;
-$flw2-clippath: polygon(0 0, 50% 50%, 90% 0, 0 0);
-
-$flw3-width: 45px;
-$flw3-height: 45px;
-$flw3-num: 8;
-$flw3-color: rgba(55, 55, 240, .4);
-$flw3-tz: -15px;
-$flw3-gap: 0;
-$flw3-border: 0;
-$flw3-border-color: transparent;
-$flw3-rotateX: -45deg;
-$flw3-clippath: polygon(0 0, 50% 50%, 90% 0, 0 0);
-
-$flw4-width: 48px;
-$flw4-height: 48px;
-$flw4-num: 10;
-$flw4-color: rgba(55, 55, 240, .4);
-$flw4-tz: -15px;
-$flw4-gap: 0;
-$flw4-border: 0;
-$flw4-border-color: transparent;
-$flw4-rotateX: -45deg;
-$flw4-clippath: polygon(0 0, 50% 50%, 90% 0, 0 0);
-
-@keyframes flw{
+@mixin flwfly($x, $y, $z, $deg, $no){
+	@keyframes flw#{$no}{
+		0%{
+			transform: rotate3d($x, $y, $z, $deg+deg);
+			
+		}
+		100%{
+			transform: rotate3d($x, $y, $z, ($deg+360)+deg);
+			
+		}		
+	}
+}
+@keyframes flwall{
 	0%{
-		transform: rotate3d(0.2, 0.4, 0.2, 20deg) translateY(10px) scale(1);
+		top: -50px;
 	}
 	100%{
-		transform: rotate3d(0.2, 0.4, 0.2, 360deg) translateY(-400px) scale(1.6);
+		top: 110%;
 	}
 }
 
 .flw{
-	display: inline-block;
 	position: absolute;
-	bottom: 0%;
-	right: 6%;
+	top: -50px;
 	transform-style: preserve-3d;
-	transform-origin: 0% 0%;
-	transform: rotate3d(0.2, 0.4, 0.2, 20deg) translateY(10px) scale(1);
-	animation: flw ease 6s forwards;
-	.carousel_container{
-		transform-style: preserve-3d;
+	
+	.carousel{
 		position: relative;
-		.carousel{
-			figure{
-				border-radius: 100%;
-				transform-origin: center bottom;
-				box-shadow: 0 0 8px 0 $shadow-base;
-			}
+		figure{
+			border-radius: 100%;
+			transform-origin: center bottom;
+			box-shadow: 0 0 8px 0 $shadow-base;
 		}
-		&.flw1{
-			@include render-carousel($flw1-width, $flw1-height, $flw1-color, $flw1-num, $flw1-tz, $flw1-gap, $flw1-border, $flw1-border-color, $flw1-rotateX, $flw1-clippath);
+	}
+	@for $i from 1 through $flw-totalNum{
+		&.flw#{$i}{
+			left: percentage(random());
+			animation: flwall ease-in (20+random(20))+s random(5)*0.1+1+s forwards infinite;
+			transform: scale(random(3)*(-0.1)+1);
+			@include render-carousel($flw-width, $flw-height, rgba(250, 135, 175, random(3)*0.1), $flw-num, $flw-tz, $flw-gap, $flw-border, $flw-border-color, $flw-rotateX, $flw-clippath);
 			.carousel{
-				position: relative;
-				transform: rotate3d(0.8, 0.2, 0.8, -60deg);
+				$x: random(); $y: random(); $z: random(); $deg: random(360);
+				transform: rotate3d($x, $y, $z, $deg+deg) translateZ((random(500)*(-1)-200)+px);
+				animation: flw#{$i} linear (20+random(20))+s forwards infinite;
+				@include flwfly($x, $y, $z, $deg, $i);
 			}
 		}
-		&.flw2{
-			@include render-carousel($flw2-width, $flw2-height, $flw2-color, $flw2-num, $flw2-tz, $flw2-gap, $flw2-border, $flw2-border-color, $flw2-rotateX, $flw2-clippath);
-			.carousel{
-				position: relative;
-				transform: rotate3d(0.6, 0.6, 0.1, 55deg);
-			}
-		}
-		&.flw3{
-			@include render-carousel($flw3-width, $flw3-height, $flw3-color, $flw3-num, $flw3-tz, $flw3-gap, $flw3-border, $flw3-border-color, $flw3-rotateX, $flw3-clippath);
-			.carousel{
-				position: relative;
-				transform: rotate3d(0.6, 0.2, 0.8, 20deg);
-			}
-		}
-		&.flw4{
-			@include render-carousel($flw4-width, $flw4-height, $flw4-color, $flw4-num, $flw4-tz, $flw4-gap, $flw4-border, $flw4-border-color, $flw4-rotateX, $flw4-clippath);
-			.carousel{
-				position: relative;
-				transform: rotate3d(0.5, 0, 0.1, -60deg);
-			}
-		}
+	}
 
+}
+// -------------------------------------------happy sad or mad-------------------------------------------------------------------
+@mixin umbrella-animate1($name, $rotateY, $translateZ, $rotateX){
+	@keyframes #{$name}{
+		0%{
+			transform: rotateY($rotateY) translateZ($translateZ) rotateX(0);
+			// box-shadow: 0 0 1px 4px rgba(255, 185, 0, 0);
+		}
+		100%{
+			transform: rotateY($rotateY) translateZ($translateZ) rotateX($rotateX);
+			// box-shadow: 0 0 1px 4px rgba(255, 185, 0, 0.2);
+		}
+	}
+	animation: $name ease 6s forwards 11s;
+}
+
+@keyframes happyUmbrella1{
+	// left: 450px;
+	// top: 400px;
+	left: 30%;
+	top: 60%;
+	0%{
+		transform: rotateX(60deg) rotateZ(-30deg) rotateY(0deg);
+		left: 30%;
+		top: 60%;
+	}
+	100%{
+		transform: rotateX(15deg) rotateZ(6deg) rotateY(0deg);
+		left: 30%;
+		top: 50%;
+	}
+}
+@keyframes happyUmbrella2{
+	0%{
+		transform: rotateX(15deg) rotateZ(6deg) rotateY(0deg);
+	}
+	100%{
+		transform: rotateX(15deg) rotateZ(6deg) rotateY(360deg);
+	}
+}
+
+@keyframes happyRobot1{
+	0%{
+		transform: translate(0px) rotate3d(0, 1, 0, -8deg);
+	}
+	100%{
+		transform: translate(0px) rotate3d(0, 1, 0, -368deg);
+	}
+}
+@keyframes happyRobotEye1{
+	0%{
+		transform: rotate3d(1, 1, 0, 0deg);
+	}
+	100%{
+		transform: rotate3d(1, 1, 0, -15deg);
+	}
+}
+@keyframes happyRobotEye2{
+	0%{
+		transform: rotate3d(1, 1, 0, -15deg);
+	}
+	100%{
+		transform: rotate3d(1, 1, 0, 0deg);
+	}
+}
+@keyframes happyRobotHand1{
+	0%{
+		transform: rotateX(90deg) rotateY(260deg) translateY(-4px);
+	}
+	100%{
+		transform: rotateX(117deg) rotateY(260deg) translateY(-4px);
+	}
+}
+@keyframes happyRobotHand2{
+	0%{
+		transform: rotateX(117deg) rotateY(260deg) translateY(-4px);
+	}
+	100%{
+		transform: rotateX(90deg) rotateY(260deg) translateY(-4px);
+	}
+}
+@keyframes sadButterfly{
+	0%{
+		transform: rotate3d(0, 1, 0, 0deg) translate3d(-200px, 450px, 0px);
+	}
+	100%{
+		transform: rotate3d(0, 1, 0, -400deg) translate3d(-200px, 450px, 0px);
+	}
+}
+
+@keyframes sadRobotEye1{
+	0%{
+		transform: rotate3d(1, 0, 0, 0deg);
+	}
+	100%{
+		transform: rotate3d(1, 0, 0, -10deg);
+	}
+}
+@keyframes sadRobotEye2{
+	0%{
+		background-size: 100% 100%;
+	}
+	100%{
+		background-size: 100% 45%;
+	}
+}
+@keyframes sadRobotUmbrella{
+	0%{
+		background-color: rgba(200, 35, 35, 0.6);
+	}
+	100%{
+		background-color: rgba(55, 10, 10, 0.6);
+	}
+}
+@keyframes madRobotEyeleft{
+	0%{
+		transform: rotate3d(0, 1, 0, 0deg);
+	}
+	100%{
+		transform: rotate3d(0, 0, 1, -15deg) translateX(-80px) translateY(-80px) translateZ(-80px);
+	}
+}
+@keyframes madRobotEyeRight{
+	0%{
+		transform: rotate3d(0, 1, 0, 0deg) translateX(60px);
+	}
+	100%{
+		transform: rotate3d(0, 0, 1, 15deg) translateX(80px) translateY(-80px) translateZ(-80px);
+	}
+}
+@keyframes madRobotNeck{
+	0%{
+		transform: translateZ(12px);
+	}
+	100%{
+		transform: rotateX(0deg) translateZ(12px) translateY(-50px);
+	}
+}
+@keyframes madRobotBox{
+	0%{
+		transform: rotateX(1deg);
+	}
+	100%{
+		transform: rotateX(1deg) translateX(60px);
+	}
+}
+@keyframes madRobotHandleft{
+	0%{
+		transform: rotateX(90deg) rotateY(260deg) translateY(-4px);
+	}
+	100%{
+		transform: rotateX(90deg) rotateY(260deg) translateY(-4px) translateX(75px);
+	}
+}
+@keyframes madRobotHandright{
+	0%{
+		transform: rotateX(90deg) rotateY(35deg) translateY(-4px);
+	}
+	100%{
+		transform: rotateX(90deg) rotateY(35deg) translateY(-4px) translateX(85px);
+	}
+}
+@keyframes madRobotFootleft{
+	0%{
+		transform: rotateX(90deg) rotateZ(90deg);
+	}
+	100%{
+		transform: rotateX(90deg) rotateZ(110deg) translateX(50px);
+	}
+}
+@keyframes madRobotFootright{
+	0%{
+		transform: rotateX(90deg) rotateZ(90deg);
+	}
+	100%{
+		transform: rotateX(90deg) rotateZ(70deg) translateX(90px) translateZ(-20px);
+	}
+}
+@keyframes madUmbrella{
+	0%{
+		transform: rotateX(60deg) rotateZ(-30deg) rotateY(0deg);
+		left: 30%;
+		top: 60%;
+	}
+	100%{
+		transform: rotateX(15deg) rotateZ(-14deg) rotateY(0deg);
+		// left: 250px;
+		// top: 200px;
+		left: 16%;
+		top: 30%;
+	}
+}
+@mixin umbrella-animate2($name, $rotateY, $translateZ, $rotateX){
+	@keyframes #{$name}{
+		0%{
+			transform: rotateY($rotateY) translateZ($translateZ) rotateX(0);
+		}
+		100%{
+			transform: rotateY($rotateY) translateZ($translateZ) rotateX($rotateX);
+		}
+	}
+	animation: $name ease .3s forwards 5s;
+}
+
+body{
+	&.mad{
+		.robot{
+			transition: 1s ease-in;
+			transform: translate(0px) rotate3d(0, 1, 0, -18deg) !important;
+			.eye.eyeleft{
+				animation: madRobotEyeleft .3s ease-out 4s infinite alternate;
+			}
+			.eye.eyeright{
+				animation: madRobotEyeRight .3s ease-out 4s infinite alternate;
+			}
+			.neck .carousel{
+				animation: madRobotNeck .3s ease-out 4s infinite alternate;
+			}
+			.body .box{
+				animation: madRobotBox .3s ease-out 4s infinite alternate;
+			}
+			.handleft{
+				animation: madRobotHandleft .3s ease-out 4s infinite alternate;
+			}
+			.handright{
+				animation: madRobotHandright .3s ease-out 4s infinite alternate;
+			}
+			.foot{
+				.carousel.left{
+					animation: madRobotFootleft .3s ease-out 4s infinite alternate;
+				}
+				.carousel.right{
+					animation: madRobotFootright .3s ease-out 4s infinite alternate;
+				}
+			}
+		}
+		.umbrella{
+			animation: madUmbrella 3s linear 1s forwards;
+			.carousel_container.top{
+				.carousel{
+					figure{
+						@for $i from 0 through $umbrella-num{
+							&:nth-child(#{$i+1}){
+								@include umbrella-animate2(madumbrella#{$i+1}, 360/$umbrella-num*$i+deg, $umbrella-tz, 120deg);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.sad{
+		filter: drop-shadow(5px 5px 5px #000) grayscale(.5);
+		.robot{
+			transition: 3s ease-in;
+			transform: translate(0px) rotate3d(0, 1, 0, -8deg) !important;
+			.eye_wrapper{
+				animation: sadRobotEye1 linear 2s forwards;
+				.eye .front{
+					animation: sadRobotEye2 ease-out 2s 2s forwards;
+				}				
+			}
+		}
+		.umbrella{
+			.carousel_container.top{
+				.carousel{
+					figure{
+						@for $i from 0 through $umbrella-num{
+							&:nth-child(#{$i+1}){
+								animation: sadRobotUmbrella linear 2s 3s forwards;
+							}
+						}
+					}
+				}
+			}
+		}
+		.butterfly{
+			animation: sadButterfly 3s linear forwards;
+		}
+	}
+	&.happy{
+		.robot{
+			transition: 3s ease-in;
+			transform: translate(0px) rotate3d(0, 1, 0, -8deg) !important;
+			animation: happyRobot1 linear 3s 17s 3 forwards;
+			.handleft{
+				animation: happyRobotHand1 linear 1s 6s forwards, happyRobotHand2 linear 1s 15s forwards;
+			}
+			.eye_wrapper{
+				animation: happyRobotEye1 linear 1s 4s forwards, happyRobotEye2 linear 1s 15s forwards;
+			}
+		}
+		.umbrella{
+			animation: happyUmbrella1 linear 3s 8s forwards, happyUmbrella2 linear 3s 17s 3 forwards;
+			.carousel_container.top{
+				.carousel{
+					figure{
+						@for $i from 0 through $umbrella-num{
+							&:nth-child(#{$i+1}){
+								@include umbrella-animate1(umbrella#{$i+1}, 360/$umbrella-num*$i+deg, $umbrella-tz, 50deg);
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
